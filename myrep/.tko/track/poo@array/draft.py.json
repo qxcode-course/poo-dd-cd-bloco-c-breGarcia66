@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-07_16-50-41",
+            "content": "@@ -1,1446 +0,0 @@\n-import random;%0A%0A# Definindo classe FOO%0Aclass Foo:%0A    # Contrutor%0A    def __inti__(self, x: int):%0A        self.x = x;%0A    # Fim construtor%0A%0A    # M%C3%A9todo string%0A    def __str__(self) -%3E str:%0A        return f'Foo(%7Bself.x%7D)';%0A    # Fim m%C3%A9todo string%0A# Fim Foo%0A%0A# Criando arrays vazios%0AlistaInt: list%5Bint%5D = %5B%5D;%0AlistaFoo: list%5BFoo%5D = %5B%5D;%0A%0A%0A# Criando lista j%C3%A1 preenchida%0AlistaNumerica: list%5Bint%5D = %5B1, 2, 3, 4, 5%5D;%0A%0A%0A# Obtendo tamanho de um array%0A# usando listaNumerica para obter tamanho%0Aprint(len(listaNumerica));%0A%0A%0A# Adicionando elemento em um array%0A# usando listaNumerica%0A%0A# no fim%0AlistaNumerica.append(7);%0Aprint(listaNumerica);%0A%0A# no come%C3%A7o%0AlistaNumerica.insert(0, 0);%0Aprint(listaNumerica);%0A%0A# posi%C3%A7%C3%A3o espec%C3%ADfica%0AlistaNumerica.insert(4, 6);%0Aprint(listaNumerica);%0A%0A%0A# Removendo elemento de um array%0A# usando listaNumerica%0A%0A# no fim%0AremoverFim = listaNumerica.pop();%0Aprint(listaNumerica);%0Aprint(removerFim);%0A%0A# no come%C3%A7o%0AremoverComeco = listaNumerica.pop(0);%0Aprint(listaNumerica);%0Aprint(removerComeco);%0A%0A# posi%C3%A7%C3%A3o espec%C3%ADfica%0AremoverEspecifico = listaNumerica.pop(4);%0Aprint(listaNumerica);%0Aprint(removerEspecifico);%0A%0A%0A# Usando Join%0AlistaFrase = %5B%22bom%22, %22dia%22, %22!%22%5D%0AretornoJoin = %22 %22.join(listaFrase);%0Aprint(listaFrase);%0Aprint(retornoJoin);%0A%0A%0A# Criando array em sequ%C3%AAncia de 0 a n%0AlistaSequencia = list(range(11));%0Aprint(listaSequencia);%0A%0A# Array com valores aleat%C3%B3rios%0AlistaRandom = %5Brandom.randint(0, 100) for _ in range(11)%5D;%0Aprint(listaRandom);%0A%0A\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-07_19-17-14",
+            "content": "@@ -1443,63 +1443,4 @@\n );%0A%0A\n-%0A# Acessando elemento por %C3%ADndice%0Aprint(listaNumerica%5B1%5D);%0A%0A\n",
+            "lines": "79"
+        },
+        {
+            "label": "2025-11-07_19-18-48",
+            "content": "import random;\n\n# Definindo classe FOO\nclass Foo:\n    # Contrutor\n    def __inti__(self, x: int):\n        self.x = x;\n    # Fim construtor\n\n    # M\u00e9todo string\n    def __str__(self) -> str:\n        return f'Foo({self.x})';\n    # Fim m\u00e9todo string\n# Fim Foo\n\n# Criando arrays vazios\nlistaInt: list[int] = [];\nlistaFoo: list[Foo] = [];\n\n\n# Criando lista j\u00e1 preenchida\nlistaNumerica: list[int] = [1, 2, 3, 4, 5];\n\n\n# Obtendo tamanho de um array\n# usando listaNumerica para obter tamanho\nprint(len(listaNumerica));\n\n\n# Adicionando elemento em um array\n# usando listaNumerica\n\n# no fim\nlistaNumerica.append(7);\nprint(listaNumerica);\n\n# no come\u00e7o\nlistaNumerica.insert(0, 0);\nprint(listaNumerica);\n\n# posi\u00e7\u00e3o espec\u00edfica\nlistaNumerica.insert(4, 6);\nprint(listaNumerica);\n\n\n# Removendo elemento de um array\n# usando listaNumerica\n\n# no fim\nremoverFim = listaNumerica.pop();\nprint(listaNumerica);\nprint(removerFim);\n\n# no come\u00e7o\nremoverComeco = listaNumerica.pop(0);\nprint(listaNumerica);\nprint(removerComeco);\n\n# posi\u00e7\u00e3o espec\u00edfica\nremoverEspecifico = listaNumerica.pop(4);\nprint(listaNumerica);\nprint(removerEspecifico);\n\n\n# Usando Join\nlistaFrase = [\"bom\", \"dia\", \"!\"]\nretornoJoin = \" \".join(listaFrase);\nprint(listaFrase);\nprint(retornoJoin);\n\n\n# Criando array em sequ\u00eancia de 0 a n\nlistaSequencia = list(range(11));\nprint(listaSequencia);\n\n# Array com valores aleat\u00f3rios\nlistaRandom = [random.randint(0, 100) for _ in range(11)];\nprint(listaRandom);\n\n\n# Acessando elemento por \u00edndice\nprint(listaNumerica[1]);\n\n",
+            "lines": "83"
+        }
+    ]
+}
