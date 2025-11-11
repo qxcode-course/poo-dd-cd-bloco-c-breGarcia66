@@ -81,3 +81,31 @@ print(listaRandom);
 # Acessando elemento por índice
 print(listaNumerica[1]);
 
+
+# Percorrer elemtos usando o for range
+listaFrutas = ["maçã", "banana", "laranja", "uva"];
+for fruta in listaFrutas:
+    print(fruta);
+
+# Percorrer elemento de um array com for indexado
+# usando listaFrutas
+for fruta in range(len(listaFrutas)):
+    print(f"{fruta}: {listaFrutas[fruta]}");
+
+
+# Novo array a partir de filtro
+listaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+print(listaNumeros);
+listaDeNumerosPares = [n for n in listaNumeros if n % 2 == 0];
+print(listaDeNumerosPares);
+
+
+# Procurando elementos por função nativa
+# usando listaFrutas
+print("banana" in listaFrutas);
+
+
+# Novo array a partir de outro transformando seu valores
+# usando listaNumeros
+listaNumeroAoQuadrado = [n ** 2 for n in listaNumeros];
+print(listaNumeroAoQuadrado);

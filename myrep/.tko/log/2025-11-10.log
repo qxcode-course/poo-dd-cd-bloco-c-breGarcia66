@@ -1,0 +1,18 @@
+2025-11-10 14:57:46, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-10 14:57:49, EXEC, v:1, k:poo@array, mode:FREE
+2025-11-10 14:57:54, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-10 15:02:01, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-10 15:02:02, EXEC, v:1, k:poo@array, mode:FREE, size:89
+2025-11-10 15:02:11, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-10 15:02:11, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-10 15:02:13, EXEC, v:1, k:poo@array, mode:LOCK, rate:0
+2025-11-10 15:02:14, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-10 15:05:56, MOVE, v:1, k:poo@array, mode:PICK
+2025-11-10 15:05:57, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:95
+2025-11-10 15:08:46, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:99
+2025-11-10 15:09:22, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:100
+2025-11-10 15:11:10, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:105
+2025-11-10 15:14:11, EXEC, v:1, k:poo@array, mode:LOCK, rate:0, size:111
+2025-11-10 15:14:57, MOVE, v:1, k:poo@array, mode:BACK
+2025-11-10 15:16:02, MOVE, v:1, k:poo@budega, mode:DOWN
+2025-11-10 15:19:30, SELF, v:1, k:poo@array, rate:90, iagen:sim, other:sim, alone:7, study:60

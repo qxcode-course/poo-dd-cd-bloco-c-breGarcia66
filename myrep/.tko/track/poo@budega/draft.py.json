@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-11_19-26-13",
+            "content": "@@ -1,25 +1,51 @@\n-print('Hello, world!!!'\n+lista = %5BNone for _ in range(2 + 1)%5D;%0Aprint(lista\n );\n",
+            "lines": "2"
+        },
+        {
+            "label": "2025-11-11_19-27-56",
+            "content": "@@ -1,53 +1,25 @@\n-lista: list%5BNone %7C str%5D = %5BNone, None%5D;%0Aprint(lista\n+print('Hello, world!!!'\n );\n",
+            "lines": "1"
+        },
+        {
+            "label": "2025-11-11_19-55-44",
+            "content": "lista: list[None | str] = [None, None];\nprint(lista);",
+            "lines": "2"
+        }
+    ]
+}

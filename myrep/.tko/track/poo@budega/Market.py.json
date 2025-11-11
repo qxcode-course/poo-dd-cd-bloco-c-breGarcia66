@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-11_19-26-13",
+            "content": "@@ -285,13 +285,12 @@\n # Fim market\n-%0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-11_19-27-56",
+            "content": "@@ -204,16 +204,20 @@\n terCount\n+ + 1\n )%5D;%0A    \n@@ -280,686 +280,18 @@\n tor%0A\n- %0A    # M%C3%A9todo str%0A    def __str__(self):%0A        listaCounter: list%5BCustomer %7C str%5D = %5B%5D;%0A        %0A        for i in self.getCounter():%0A            listaCounter.append(i if i != None else '-----');%0A        %0A        retorno = %22Caixa: %22;%0A        for i in listaCounter:%0A            retorno += i%0A        %0A        print(listaCounter);%0A        return 'Teste';%0A%0A%0A    # Fim m%C3%A9todo str%0A%0A    # M%C3%A9todo de acesso%0A    def getCounter(self) -%3E list%5BCustomer %7C None%5D:%0A        return self.__counter;%0A%0A    def getQueue(self) -%3E list%5BCustomer%5D:%0A        return self.__queue;%0A    # Fim m%C3%A9todo de acesso%0A# Fim market%0A%0A%0Am = Market(counterCount = 2);%0A%0Aprint(m);%0Aprint(m.getCounter());%0Aprint(m.getQueue());\n+%0A# Fim market\n %0A\n",
+            "lines": "11"
+        },
+        {
+            "label": "2025-11-11_19-55-44",
+            "content": "from Customer import Customer;\n\n# Criando classe market\nclass Market:\n    # Construtor\n    def __init__(self, counterCount: int):\n        self.__counter: list[Customer | None] = [None for _ in range(counterCount)];\n        self.__queue: list[Customer] = [];\n    # Fim construtor\n \n    # M\u00e9todo str\n    def __str__(self):\n        listaCounter: list[Customer | str] = [];\n        \n        for i in self.getCounter():\n            listaCounter.append(i if i != None else '-----');\n        \n        retorno = \"Caixa: \";\n        for i in listaCounter:\n            retorno += i\n        \n        print(listaCounter);\n        return 'Teste';\n\n\n    # Fim m\u00e9todo str\n\n    # M\u00e9todo de acesso\n    def getCounter(self) -> list[Customer | None]:\n        return self.__counter;\n\n    def getQueue(self) -> list[Customer]:\n        return self.__queue;\n    # Fim m\u00e9todo de acesso\n# Fim market\n\n\nm = Market(counterCount = 2);\n\nprint(m);\nprint(m.getCounter());\nprint(m.getQueue());\n",
+            "lines": "42"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-11_19-26-13",
+            "content": "# Criando classe customer\nclass Customer:\n    # Construtor\n    def __init__(self, name: str):\n        self.__name = name;\n    # Fim construtor\n\n    # M\u00e9todo str\n    def __str__(self) -> str:\n        return f\"{self.getName()}\";\n    # Fim m\u00e9todo str\n\n    # M\u00e9todos de acesso\n    def getName(self) -> str:\n        return self.__name;\n    # Fim m\u00e9todos de acesso\n\n    # M\u00e9todos mutantes\n    def setName(self, name: str):\n        self.__name = name;\n    # Fim m\u00e9todos mutantes\n# Fim customer",
+            "lines": "22"
+        }
+    ]
+}

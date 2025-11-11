@@ -12,8 +12,38 @@
         },
         {
             "label": "2025-11-07_19-18-48",
-            "content": "import random;\n\n# Definindo classe FOO\nclass Foo:\n    # Contrutor\n    def __inti__(self, x: int):\n        self.x = x;\n    # Fim construtor\n\n    # M\u00e9todo string\n    def __str__(self) -> str:\n        return f'Foo({self.x})';\n    # Fim m\u00e9todo string\n# Fim Foo\n\n# Criando arrays vazios\nlistaInt: list[int] = [];\nlistaFoo: list[Foo] = [];\n\n\n# Criando lista j\u00e1 preenchida\nlistaNumerica: list[int] = [1, 2, 3, 4, 5];\n\n\n# Obtendo tamanho de um array\n# usando listaNumerica para obter tamanho\nprint(len(listaNumerica));\n\n\n# Adicionando elemento em um array\n# usando listaNumerica\n\n# no fim\nlistaNumerica.append(7);\nprint(listaNumerica);\n\n# no come\u00e7o\nlistaNumerica.insert(0, 0);\nprint(listaNumerica);\n\n# posi\u00e7\u00e3o espec\u00edfica\nlistaNumerica.insert(4, 6);\nprint(listaNumerica);\n\n\n# Removendo elemento de um array\n# usando listaNumerica\n\n# no fim\nremoverFim = listaNumerica.pop();\nprint(listaNumerica);\nprint(removerFim);\n\n# no come\u00e7o\nremoverComeco = listaNumerica.pop(0);\nprint(listaNumerica);\nprint(removerComeco);\n\n# posi\u00e7\u00e3o espec\u00edfica\nremoverEspecifico = listaNumerica.pop(4);\nprint(listaNumerica);\nprint(removerEspecifico);\n\n\n# Usando Join\nlistaFrase = [\"bom\", \"dia\", \"!\"]\nretornoJoin = \" \".join(listaFrase);\nprint(listaFrase);\nprint(retornoJoin);\n\n\n# Criando array em sequ\u00eancia de 0 a n\nlistaSequencia = list(range(11));\nprint(listaSequencia);\n\n# Array com valores aleat\u00f3rios\nlistaRandom = [random.randint(0, 100) for _ in range(11)];\nprint(listaRandom);\n\n\n# Acessando elemento por \u00edndice\nprint(listaNumerica[1]);\n\n",
+            "content": "@@ -1502,180 +1502,4 @@\n );%0A%0A\n-%0A# Percorrer elemtos usando o for range%0AlistaFrutas = %5B%22ma%C3%A7%C3%A3%22, %22banana%22, %22laranja%22, %22uva%22%5D;%0A%0Afor fruta in range(len(listaFrutas)):%0A    print(f%22%7Bfruta%7D: %7BlistaFrutas%5Bfruta%5D%7D%22);%0A\n",
             "lines": "83"
+        },
+        {
+            "label": "2025-11-10_15-02-02",
+            "content": "@@ -1594,123 +1594,8 @@\n %22%5D;%0A\n-for fruta in listaFrutas:%0A    print(fruta);%0A%0A# Percorrer elemento de um array com for indexado%0A# usando listaFrutas\n %0Afor\n@@ -1674,10 +1674,8 @@\n ta%5D%7D%22);%0A\n-%0A%0A\n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-10_15-05-57",
+            "content": "@@ -1795,167 +1795,4 @@\n ;%0A%0A%0A\n-# Novo array a partir de filtro%0AlistaNumeros = %5B1, 2, 3, 4, 5, 6, 7, 8, 9, 10%5D;%0AlistaDeNumerosPares = %5Bn for n in listaNumeros if n %25 2 == 0%5D;%0Aprint(listaNumeros);\n",
+            "lines": "95"
+        },
+        {
+            "label": "2025-11-10_15-08-46",
+            "content": "@@ -1875,29 +1875,8 @@\n 0%5D;%0A\n-print(listaNumeros);%0A\n list\n@@ -1945,24 +1945,17 @@\n nt(lista\n-De\n Numeros\n-Pares\n );\n",
+            "lines": "99"
+        },
+        {
+            "label": "2025-11-10_15-09-22",
+            "content": "@@ -1986,100 +1986,4 @@\n es);\n-%0A%0A%0A# Procurando elementos por fun%C3%A7%C3%A3o nativa%0A# usando listaFrutas%0Aprint(%22banana%22 in listaFrutas);\n",
+            "lines": "100"
+        },
+        {
+            "label": "2025-11-10_15-11-10",
+            "content": "@@ -2082,171 +2082,4 @@\n as);\n-%0A%0A%0A# Novo array a partir de outro transformando seu valores%0A# usando listaNumeros%0AlistaNumeroAoQuadrado = %5Bn ** 2 for n in listaNumeros%5D;%0Aprint(listaNumeroAoQuadrado);\n",
+            "lines": "105"
+        },
+        {
+            "label": "2025-11-10_15-14-11",
+            "content": "import random;\n\n# Definindo classe FOO\nclass Foo:\n    # Contrutor\n    def __inti__(self, x: int):\n        self.x = x;\n    # Fim construtor\n\n    # M\u00e9todo string\n    def __str__(self) -> str:\n        return f'Foo({self.x})';\n    # Fim m\u00e9todo string\n# Fim Foo\n\n# Criando arrays vazios\nlistaInt: list[int] = [];\nlistaFoo: list[Foo] = [];\n\n\n# Criando lista j\u00e1 preenchida\nlistaNumerica: list[int] = [1, 2, 3, 4, 5];\n\n\n# Obtendo tamanho de um array\n# usando listaNumerica para obter tamanho\nprint(len(listaNumerica));\n\n\n# Adicionando elemento em um array\n# usando listaNumerica\n\n# no fim\nlistaNumerica.append(7);\nprint(listaNumerica);\n\n# no come\u00e7o\nlistaNumerica.insert(0, 0);\nprint(listaNumerica);\n\n# posi\u00e7\u00e3o espec\u00edfica\nlistaNumerica.insert(4, 6);\nprint(listaNumerica);\n\n\n# Removendo elemento de um array\n# usando listaNumerica\n\n# no fim\nremoverFim = listaNumerica.pop();\nprint(listaNumerica);\nprint(removerFim);\n\n# no come\u00e7o\nremoverComeco = listaNumerica.pop(0);\nprint(listaNumerica);\nprint(removerComeco);\n\n# posi\u00e7\u00e3o espec\u00edfica\nremoverEspecifico = listaNumerica.pop(4);\nprint(listaNumerica);\nprint(removerEspecifico);\n\n\n# Usando Join\nlistaFrase = [\"bom\", \"dia\", \"!\"]\nretornoJoin = \" \".join(listaFrase);\nprint(listaFrase);\nprint(retornoJoin);\n\n\n# Criando array em sequ\u00eancia de 0 a n\nlistaSequencia = list(range(11));\nprint(listaSequencia);\n\n# Array com valores aleat\u00f3rios\nlistaRandom = [random.randint(0, 100) for _ in range(11)];\nprint(listaRandom);\n\n\n# Acessando elemento por \u00edndice\nprint(listaNumerica[1]);\n\n\n# Percorrer elemtos usando o for range\nlistaFrutas = [\"ma\u00e7\u00e3\", \"banana\", \"laranja\", \"uva\"];\nfor fruta in listaFrutas:\n    print(fruta);\n\n# Percorrer elemento de um array com for indexado\n# usando listaFrutas\nfor fruta in range(len(listaFrutas)):\n    print(f\"{fruta}: {listaFrutas[fruta]}\");\n\n\n# Novo array a partir de filtro\nlistaNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];\nprint(listaNumeros);\nlistaDeNumerosPares = [n for n in listaNumeros if n % 2 == 0];\nprint(listaDeNumerosPares);\n\n\n# Procurando elementos por fun\u00e7\u00e3o nativa\n# usando listaFrutas\nprint(\"banana\" in listaFrutas);\n\n\n# Novo array a partir de outro transformando seu valores\n# usando listaNumeros\nlistaNumeroAoQuadrado = [n ** 2 for n in listaNumeros];\nprint(listaNumeroAoQuadrado);",
+            "lines": "111"
         }
     ]
 }

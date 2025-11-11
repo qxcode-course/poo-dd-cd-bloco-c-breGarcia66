@@ -1,0 +1,15 @@
+2025-11-11 19:25:28, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-11 19:25:30, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-11 19:25:33, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-11 19:26:13, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:35
+2025-11-11 19:26:22, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-11 19:26:24, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-11 19:26:26, EXEC, v:1, k:poo@budega, mode:FREE
+2025-11-11 19:27:23, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-11 19:27:55, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-11 19:27:56, EXEC, v:1, k:poo@budega, mode:FREE, size:34
+2025-11-11 19:30:49, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-11 19:55:43, MOVE, v:1, k:poo@budega, mode:PICK
+2025-11-11 19:55:44, EXEC, v:1, k:poo@budega, mode:FULL, rate:0, size:66
+2025-11-11 19:55:45, MOVE, v:1, k:poo@budega, mode:BACK
+2025-11-11 19:57:08, SELF, v:1, k:poo@array, rate:80, iagen:sim, other:sim, alone:7, study:60
