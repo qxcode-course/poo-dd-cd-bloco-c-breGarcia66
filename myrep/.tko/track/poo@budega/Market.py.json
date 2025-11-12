@@ -27,8 +27,58 @@
         },
         {
             "label": "2025-11-12_12-03-23",
-            "content": "from Customer import Customer;\n\n# Criando classe market\nclass Market:\n    # Construtor\n    def __init__(self, counterCount: int):\n        self.__counter: list[Customer | None] = [None for _ in range(counterCount)];\n        self.__queue: list[Customer] = [];\n    # Fim construtor\n \n    # M\u00e9todo str\n    def __str__(self):\n        return f'Caixa: {self.getCounter()}\\n Fila: {self.getQueue()}';\n    # Fim m\u00e9todo str\n\n    # M\u00e9todo de acesso\n    def getCounter(self) -> list[Customer | None]:\n        return self.__counter;\n\n    def getQueue(self) -> list[Customer]:\n        return self.__queue;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todos do objeto\n    def arrive(self, customer: Customer):\n        self.getQueue().append(customer);\n\n    def callCustomer(self, index: int):\n        self.getCounter()[index] = self.getQueue().pop(0);\n# Fim market\n",
+            "content": "@@ -326,427 +326,68 @@\n     \n-filaDeEspera: list%5Bstr%5D = %5B%5D;%0A        for customer in self.getQueue():%0A           filaDeEspera.append(customer.getName());%0A        %0A        c\n+return f'C\n aixa\n-s\n : \n-list%5Bstr %7C None%5D = %5B%5D;%0A        for caixa in self.getCounter():%0A            if caixa is None:%0A                caixas.append(None)%0A            %0A            else:%0A                caixas.append(caixa.getName());%0A        %0A        return f'Caixa: %7Bcaixas%7D%5Cn Fila: %7BfilaDeEspera\n+%7Bself.getCounter()%7D%5Cn Fila: %7Bself.getQueue()\n %7D';%0A\n@@ -774,527 +774,58 @@\n     \n-if self.getCounter()%5Bindex%5D is not None:%0A            %0A            raise Exception('fail: caixa ocupado');%0A%0A        try:%0A            self.getCounter()%5Bindex%5D = self.getQueue().pop(0);%0A%0A        except IndexError:%0A            print('fail: sem clientes');%0A            return;%0A%0A    def finish(self, index: int):%0A        if self.getCounter()%5Bindex%5D is None:%0A            print('fail: caixa vazio');%0A%0A        try:%0A            self.getCounter()%5Bindex%5D = None;%0A%0A        except IndexError:%0A            print('fail: caixa vazio');%0A\n+self.getCounter()%5Bindex%5D = self.getQueue().pop(0);\n %0A# F\n",
             "lines": "30"
+        },
+        {
+            "label": "2025-11-12_15-49-43",
+            "content": "@@ -1186,71 +1186,21 @@\n     \n-print('fail: caixa ocupado');%0A            return;%0A            #\n+%0A            \n rais\n@@ -1438,27 +1438,8 @@\n int)\n- -%3E Customer %7C None\n :%0A  \n@@ -1520,36 +1520,16 @@\n vazio');\n-%0A            return;\n %0A%0A      \n@@ -1539,60 +1539,8 @@\n ry:%0A\n-            oldCustomer = self.getCounter()%5Bindex%5D;%0A\n     \n@@ -1643,70 +1643,15 @@\n ixa \n-inexistente');%0A            return;%0A%0A        return oldCustomer\n+vazio')\n ;%0A%0A#\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-12_15-57-23",
+            "content": "@@ -1125,22 +1125,8 @@\n t):%0A\n-        if  %0A%0A\n     \n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-12_16-29-10",
+            "content": "@@ -326,70 +326,139 @@\n     \n-customers = list(map(Customer.getName(), self.getQueue()));%0A%0A%0A\n+filaDeEspera: list%5Bstr%5D = %5B%5D;%0A        for customer in self.getQueue():%0A           filaDeEspera.append(customer.getName());%0A        \n %0A   \n@@ -733,17 +733,20 @@\n a: %7B\n-customers\n+filaDeEspera\n %7D';%0A\n@@ -1136,118 +1136,9 @@\n  if \n-index %3E len(self.getCounter()) or index %3C 0:%0A            print('fail: caixa inexistente');%0A            return;\n+ \n %0A%0A  \n",
+            "lines": "70"
+        },
+        {
+            "label": "2025-11-12_17-01-11",
+            "content": "@@ -338,51 +338,18 @@\n s = \n-'%5B' + ', '.join(list(map(lambda customer: c\n+list(map(C\n usto\n@@ -380,24 +380,19 @@\n ueue()))\n-)\n- + '%5D';\n+;%0A%0A\n %0A%0A      \n@@ -398,140 +398,221 @@\n    c\n-ounters = '%5B' +  ', '.join(list(map(lambda counter:counter.getName() if counter is not None else '-----', self.getCounter()))) + '%5D'\n+aixas: list%5Bstr %7C None%5D = %5B%5D;%0A        for caixa in self.getCounter():%0A            if caixa is None:%0A                caixas.append(None)%0A            %0A            else:%0A                caixas.append(caixa.getName())\n ;%0A  \n@@ -644,22 +644,20 @@\n aixa: %7Bc\n-ounter\n+aixa\n s%7D%5Cn Fil\n@@ -1094,12 +1094,8 @@\n r())\n- - 1\n  or \n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-12_17-27-14",
+            "content": "@@ -1637,87 +1637,155 @@\n     \n-if index %3E len(self.getCounter()) - 1 or index %3C 0:%0A            raise Exception\n+try:%0A            oldCustomer = self.getCounter()%5Bindex%5D;%0A            self.getCounter()%5Bindex%5D = None;%0A%0A        except IndexError:%0A            print\n ('fa\n@@ -1809,25 +1809,24 @@\n ente');%0A\n-%0A\n         \n oldCusto\n@@ -1821,87 +1821,18 @@\n     \n-oldCustomer = self.getCounter()%5Bindex%5D;%0A        self.getCounter()%5Bindex%5D = None\n+    return\n ;%0A%0A \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-12_17-31-12",
+            "content": "@@ -1576,31 +1576,21 @@\n         \n-raise Exception\n+print\n ('fail: \n@@ -1612,29 +1612,28 @@\n         \n-%0A\n     \n-    try:\n+return;%0A\n %0A       \n@@ -1637,142 +1637,87 @@\n     \n-    oldCustomer = self.getCounter()%5Bindex%5D;%0A            self.getCounter()%5Bindex%5D = None;%0A%0A        except IndexError:%0A            print\n+if index %3E len(self.getCounter()) - 1 or index %3C 0:%0A            raise Exception\n ('fa\n@@ -1737,32 +1737,33 @@\n xistente');%0A\n+%0A\n         \n     return;%0A\n@@ -1746,34 +1746,103 @@\n );%0A%0A        \n-    return\n+oldCustomer = self.getCounter()%5Bindex%5D;%0A        self.getCounter()%5Bindex%5D = None\n ;%0A%0A        r\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-12_17-55-47",
+            "content": "@@ -1522,46 +1522,9 @@\n one:\n-        \n %0A\n-        try:            %0A    \n     \n@@ -1572,33 +1572,39 @@\n             \n-    print\n+raise Exception\n ('fail: caix\n@@ -1618,32 +1618,33 @@\n ');%0A        \n+%0A\n         \n return;%0A%0A   \n@@ -1627,32 +1627,28 @@\n    %0A        \n-return;%0A\n+try:\n %0A           \n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-12_18-08-54",
+            "content": "@@ -597,17 +597,16 @@\n  f'Caixa\n-s\n : %7Bcount\n@@ -616,13 +616,11 @@\n %7D%5Cn \n-Esper\n+Fil\n a: %7B\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-12_18-09-19",
+            "content": "@@ -612,16 +612,17 @@\n nters%7D%5Cn\n+ \n Espera: \n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-12_18-09-27",
+            "content": "from Customer import Customer;\n\n# Criando classe market\nclass Market:\n    # Construtor\n    def __init__(self, counterCount: int):\n        self.__counter: list[Customer | None] = [None for _ in range(counterCount)];\n        self.__queue: list[Customer] = [];\n    # Fim construtor\n \n    # M\u00e9todo str\n    def __str__(self):\n        customers = '[' + ', '.join(list(map(lambda customer: customer.getName(), self.getQueue()))) + ']';\n\n        counters = '[' +  ', '.join(list(map(lambda counter:counter.getName() if counter is not None else '-----', self.getCounter()))) + ']';\n        \n        return f'Caixas: {counters}\\nEspera: {customers}';\n    # Fim m\u00e9todo str\n\n    # M\u00e9todo de acesso\n    def getCounter(self) -> list[Customer | None]:\n        return self.__counter;\n\n    def getQueue(self) -> list[Customer]:\n        return self.__queue;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todos do objeto\n    def arrive(self, customer: Customer):\n        self.getQueue().append(customer);\n\n    def callCustomer(self, index: int):\n        if index > len(self.getCounter()) - 1 or index < 0:\n            print('fail: caixa inexistente');\n            return;\n\n        if self.getCounter()[index] is not None:\n            print('fail: caixa ocupado');\n            return;\n            #raise Exception('fail: caixa ocupado');\n\n        try:\n            self.getCounter()[index] = self.getQueue().pop(0);\n\n        except IndexError:\n            print('fail: sem clientes');\n            return;\n\n    def finish(self, index: int) -> Customer | None:        \n        try:            \n            if self.getCounter()[index] is None:\n                print('fail: caixa vazio');\n                return;\n\n            oldCustomer = self.getCounter()[index];\n            self.getCounter()[index] = None;\n\n        except IndexError:\n            print('fail: caixa inexistente');\n            return;\n\n        return oldCustomer;\n\n# Fim market\n",
+            "lines": "64"
         }
     ]
 }

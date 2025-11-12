@@ -10,19 +10,11 @@ class Market:
  
     # Método str
     def __str__(self):
-        filaDeEspera: list[str] = [];
-        for customer in self.getQueue():
-           filaDeEspera.append(customer.getName());
+        customers = '[' + ', '.join(list(map(lambda customer: customer.getName(), self.getQueue()))) + ']';
+
+        counters = '[' +  ', '.join(list(map(lambda counter:counter.getName() if counter is not None else '-----', self.getCounter()))) + ']';
         
-        caixas: list[str | None] = [];
-        for caixa in self.getCounter():
-            if caixa is None:
-                caixas.append(None)
-            
-            else:
-                caixas.append(caixa.getName());
-        
-        return f'Caixa: {caixas}\n Fila: {filaDeEspera}';
+        return f'Caixas: {counters}\nEspera: {customers}';
     # Fim método str
 
     # Método de acesso
@@ -38,9 +30,14 @@ class Market:
         self.getQueue().append(customer);
 
     def callCustomer(self, index: int):
+        if index > len(self.getCounter()) - 1 or index < 0:
+            print('fail: caixa inexistente');
+            return;
+
         if self.getCounter()[index] is not None:
-            
-            raise Exception('fail: caixa ocupado');
+            print('fail: caixa ocupado');
+            return;
+            #raise Exception('fail: caixa ocupado');
 
         try:
             self.getCounter()[index] = self.getQueue().pop(0);
@@ -49,14 +46,19 @@ class Market:
             print('fail: sem clientes');
             return;
 
-    def finish(self, index: int):
-        if self.getCounter()[index] is None:
-            print('fail: caixa vazio');
+    def finish(self, index: int) -> Customer | None:        
+        try:            
+            if self.getCounter()[index] is None:
+                print('fail: caixa vazio');
+                return;
 
-        try:
+            oldCustomer = self.getCounter()[index];
             self.getCounter()[index] = None;
 
         except IndexError:
-            print('fail: caixa vazio');
+            print('fail: caixa inexistente');
+            return;
+
+        return oldCustomer;
 
 # Fim market

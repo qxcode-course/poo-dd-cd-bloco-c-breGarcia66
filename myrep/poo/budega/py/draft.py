@@ -1,37 +1,39 @@
 from Customer import Customer;
 from Market import Market;
 
-c1 = Customer('Armando');
-c2 = Customer('Maria');
-c3 = Customer('João');
-c4 = Customer('Carol');
-c5 = Customer('Lucas');
+# Criando método main
+def main():
+    market: Market = Market(0);
 
-m = Market(3);
+    while True:
+        line: str = input();
+        args: list[str] = line.split(' ');
+        print(f'${line}');
 
-print(c1, c2, c3, c4, c5);
-print(m, '\n');
+        match args[0]:
+            case 'init':
+                market = Market(int(args[1]));
 
-m.arrive(c1);
-m.arrive(c2);
-m.arrive(c3);
-m.arrive(c4);
-m.arrive(c5);
+            case 'show':
+                print(market);
 
-m.callCustomer(0);  
-print(m, '\n');
+            case 'arrive':
+                customer: Customer = Customer(args[1]);
+                market.arrive(customer);
 
-m.callCustomer(1);
-print(m, '\n');
+            case 'call':
+                market.callCustomer(int(args[1]));
 
-m.callCustomer(2);
-print(m, '\n');
+            case 'finish':
+                market.finish(int(args[1]));
 
-# m.callCustomer(0);
-# print(m, '\n');
+            case 'end':
+                break;
 
-m.finish(0);
-print(m, '\n');
+            case _:
+                print('fail: comando invalido');
+# Fim método main
 
-m.finish(0);
-print(m, '\n');
+# Executando main
+main()
+# Fim da execução main
