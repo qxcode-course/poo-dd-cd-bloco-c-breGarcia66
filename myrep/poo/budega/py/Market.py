@@ -10,7 +10,19 @@ class Market:
  
     # Método str
     def __str__(self):
-        return 'Teste';
+        filaDeEspera: list[str] = [];
+        for customer in self.getQueue():
+           filaDeEspera.append(customer.getName());
+        
+        caixas: list[str | None] = [];
+        for caixa in self.getCounter():
+            if caixa is None:
+                caixas.append(None)
+            
+            else:
+                caixas.append(caixa.getName());
+        
+        return f'Caixa: {caixas}\n Fila: {filaDeEspera}';
     # Fim método str
 
     # Método de acesso
@@ -26,12 +38,25 @@ class Market:
         self.getQueue().append(customer);
 
     def callCustomer(self, index: int):
-        self.getCounter().insert(index, self.getQueue().pop());
+        if self.getCounter()[index] is not None:
+            
+            raise Exception('fail: caixa ocupado');
+
+        try:
+            self.getCounter()[index] = self.getQueue().pop(0);
+
+        except IndexError:
+            print('fail: sem clientes');
+            return;
+
+    def finish(self, index: int):
+        if self.getCounter()[index] is None:
+            print('fail: caixa vazio');
+
+        try:
+            self.getCounter()[index] = None;
+
+        except IndexError:
+            print('fail: caixa vazio');
+
 # Fim market
-
-
-m = Market(counterCount = 2);
-
-print(m);
-print(m.getCounter());
-print(m.getQueue());

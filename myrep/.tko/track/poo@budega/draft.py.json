@@ -12,8 +12,18 @@
         },
         {
             "label": "2025-11-11_19-55-44",
-            "content": "lista: list[None | str] = [None, None];\nprint(lista);",
+            "content": "@@ -1,233 +1,53 @@\n-from Customer import Customer;%0Afrom Market import Market;%0A%0Ac1 = Customer('Armando');%0Ac2 = Customer('Maria');%0Ac3 = Customer('Jo%C3%A3o');%0Ac4 = Customer('Carol');%0Ac5 = Customer('Lucas');%0A%0Am = Market(3);%0A%0Aprint(c1, c2, c3, c4, c5);%0Aprint(m\n+lista: list%5BNone %7C str%5D = %5BNone, None%5D;%0Aprint(lista\n );\n",
             "lines": "2"
+        },
+        {
+            "label": "2025-11-12_11-56-15",
+            "content": "@@ -230,109 +230,4 @@\n (m);\n-%0A%0Am.arrive(c1);%0Am.arrive(c2);%0Am.arrive(c3);%0Am.arrive(c4);%0Am.arrive(c5);%0A%0Am.callCustomer(0);  %0A%0Aprint(m);%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-12_12-03-23",
+            "content": "from Customer import Customer;\nfrom Market import Market;\n\nc1 = Customer('Armando');\nc2 = Customer('Maria');\nc3 = Customer('Jo\u00e3o');\nc4 = Customer('Carol');\nc5 = Customer('Lucas');\n\nm = Market(3);\n\nprint(c1, c2, c3, c4, c5);\nprint(m);\n\nm.arrive(c1);\nm.arrive(c2);\nm.arrive(c3);\nm.arrive(c4);\nm.arrive(c5);\n\nm.callCustomer(0);  \n\nprint(m);\n",
+            "lines": "23"
         }
     ]
 }

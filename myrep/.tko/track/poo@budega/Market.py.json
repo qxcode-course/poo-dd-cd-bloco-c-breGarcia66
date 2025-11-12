@@ -12,8 +12,23 @@
         },
         {
             "label": "2025-11-11_19-55-44",
-            "content": "from Customer import Customer;\n\n# Criando classe market\nclass Market:\n    # Construtor\n    def __init__(self, counterCount: int):\n        self.__counter: list[Customer | None] = [None for _ in range(counterCount)];\n        self.__queue: list[Customer] = [];\n    # Fim construtor\n \n    # M\u00e9todo str\n    def __str__(self):\n        listaCounter: list[Customer | str] = [];\n        \n        for i in self.getCounter():\n            listaCounter.append(i if i != None else '-----');\n        \n        retorno = \"Caixa: \";\n        for i in listaCounter:\n            retorno += i\n        \n        print(listaCounter);\n        return 'Teste';\n\n\n    # Fim m\u00e9todo str\n\n    # M\u00e9todo de acesso\n    def getCounter(self) -> list[Customer | None]:\n        return self.__counter;\n\n    def getQueue(self) -> list[Customer]:\n        return self.__queue;\n    # Fim m\u00e9todo de acesso\n# Fim market\n\n\nm = Market(counterCount = 2);\n\nprint(m);\nprint(m.getCounter());\nprint(m.getQueue());\n",
+            "content": "@@ -326,193 +326,287 @@\n     \n-return 'Teste';%0A    # Fim m%C3%A9todo str%0A%0A    # M%C3%A9todo de acesso%0A    def getCounter(self) -%3E list%5BCustomer %7C None%5D:%0A        return self.__c\n+listaCounter: list%5BCustomer %7C str%5D = %5B%5D;%0A        %0A        for i in self.getCounter():%0A            listaCounter.append(i if i != None else '-----');%0A        %0A        retorno = %22Caixa: %22;%0A        for i in listaC\n ounter\n-;%0A\n+:\n %0A    \n-def getQueue(self) -%3E list%5BCustomer%5D:\n+        retorno += i%0A        %0A        print(listaCounter);\n %0A   \n@@ -621,21 +621,18 @@\n urn \n-self.__queue;\n+'Teste';%0A%0A\n %0A   \n@@ -649,17 +649,11 @@\n odo \n-de acesso\n+str\n %0A%0A  \n@@ -666,18 +666,17 @@\n todo\n-s\n  d\n-o objet\n+e acess\n o%0A  \n@@ -685,82 +685,80 @@\n def \n-arrive(self, customer: Customer):%0A        self.getQueue().append(custom\n+getCounter(self) -%3E list%5BCustomer %7C None%5D:%0A        return self.__count\n er\n-)\n ;%0A%0A \n@@ -768,103 +768,97 @@\n def \n-callCustomer(self, index: int):%0A        self.getCounter().insert(index, self.getQueue().pop());\n+getQueue(self) -%3E list%5BCustomer%5D:%0A        return self.__queue;%0A    # Fim m%C3%A9todo de acesso\n %0A# F\n",
             "lines": "42"
+        },
+        {
+            "label": "2025-11-12_11-50-14",
+            "content": "@@ -778,9 +778,8 @@\n pop(\n-0\n ));%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-11-12_11-56-15",
+            "content": "@@ -333,62 +333,14 @@\n urn \n-f'Caixa: %7Bself.getCounter()%7D%5Cn Fila: %7Bself.getQueue()%7D\n+'Teste\n ';%0A \n@@ -743,17 +743,22 @@\n er()\n-%5B\n+.insert(\n index\n-%5D =\n+,\n  sel\n@@ -776,16 +776,17 @@\n ).pop(0)\n+)\n ;%0A# Fim \n@@ -784,16 +784,103 @@\n );%0A# Fim market%0A\n+%0A%0Am = Market(counterCount = 2);%0A%0Aprint(m);%0Aprint(m.getCounter());%0Aprint(m.getQueue());%0A\n",
+            "lines": "37"
+        },
+        {
+            "label": "2025-11-12_12-03-23",
+            "content": "from Customer import Customer;\n\n# Criando classe market\nclass Market:\n    # Construtor\n    def __init__(self, counterCount: int):\n        self.__counter: list[Customer | None] = [None for _ in range(counterCount)];\n        self.__queue: list[Customer] = [];\n    # Fim construtor\n \n    # M\u00e9todo str\n    def __str__(self):\n        return f'Caixa: {self.getCounter()}\\n Fila: {self.getQueue()}';\n    # Fim m\u00e9todo str\n\n    # M\u00e9todo de acesso\n    def getCounter(self) -> list[Customer | None]:\n        return self.__counter;\n\n    def getQueue(self) -> list[Customer]:\n        return self.__queue;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todos do objeto\n    def arrive(self, customer: Customer):\n        self.getQueue().append(customer);\n\n    def callCustomer(self, index: int):\n        self.getCounter()[index] = self.getQueue().pop(0);\n# Fim market\n",
+            "lines": "30"
         }
     ]
 }
