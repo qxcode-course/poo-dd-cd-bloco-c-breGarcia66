@@ -27,8 +27,53 @@
         },
         {
             "label": "2025-11-14_14-23-40",
-            "content": "from Client import Client;\n\n# Criando classe Theater\nclass Theater:\n\n    # Construtor\n    def __init__(self, capacity: int):\n        self.__seats: list[Client | None] = [None] * capacity;\n    # Fim construtor\n\n    # M\u00e9todo string\n\n    # Fim m\u00e9todo string\n\n    # M\u00e9todo de acesso\n    def getSeats(self) -> list[Client | None]:\n        return self.__seats;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todo mutante\n    def setSeat(self, capacity: int):\n        self.__seats: list[Client |None] = [None] * capacity;\n    # Fim m\u00e9todo mutante\n\n    # M\u00e9todos privados do objeto\n    def verifyIndex(self, index: int) -> bool:\n        try:\n            self.getSeats()[index];\n            return True;\n\n        except IndexError:\n            return False;\n\n    def search(self, name: str) -> int | None:\n        try:\n            for client in self.getSeats():\n                if client is not None and client.getId() == name:\n                    return self.getSeats().index(client);\n\n        except:\n            return -1;\n\n    # Fim m\u00e9todos privados do objeto\n\nt = Theater(5);\nprint(t.getSeats());\nprint(t.verifyIndex(0));\nprint(t.verifyIndex(5));\n",
+            "content": "@@ -1042,160 +1042,91 @@\n to%0A%0A\n-    # M%C3%A9todos p%C3%BAblicos do obejto%0A%0Ac1 = Client('Roger', 5555);%0Ac2 = Client('Pedro', 5555);%0Ac3 = Client('Jo%C3%A3o', 5555);%0A%0At = Theater(5);%0Aprint(t.getSeats(\n+t = Theater(5);%0Aprint(t.getSeats());%0Aprint(t.verifyIndex(0));%0Aprint(t.verifyIndex(5\n ));%0A\n-%0A\n",
             "lines": "48"
+        },
+        {
+            "label": "2025-11-14_15-28-47",
+            "content": "@@ -1070,356 +1070,111 @@\n o ob\n-j\n e\n+j\n to%0A\n-    def reserve(self, id: str, phone: int, index: int):%0A        client: Client = Client(id, phone);%0A%0A        try:%0A            self.getSeats().insert(index, client);%0A%0A        except IndexError:%0A            print('fail: cadeira nao existe');%0A    # Fim m%C3%A9todos p%C3%BAblicos do objeto%0A%0At = Theater(5);%0Aprint(t.getSeats());%0A%0At.reserve('carlos', 5555, 2\n+%0Ac1 = Client('Roger', 5555);%0Ac2 = Client('Pedro', 5555);%0Ac3 = Client('Jo%C3%A3o', 5555);%0A%0At = Theater(5\n );%0Ap\n",
+            "lines": "53"
+        },
+        {
+            "label": "2025-11-14_15-42-32",
+            "content": "@@ -1189,117 +1189,8 @@\n ry:%0A\n-%0A            if self.getSeats()%5Bindex%5D is not None:%0A                print('fail: cadeira ja esta ocupada');%0A%0A\n     \n@@ -1443,23 +1443,4 @@\n );%0A%0A\n-t.search('carlos');\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-14_15-45-42",
+            "content": "@@ -1548,22 +1548,16 @@\n ts());%0A%0A\n-print(\n t.search\n@@ -1566,10 +1566,9 @@\n carlos')\n-)\n ;\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-14_15-46-02",
+            "content": "@@ -1568,14 +1568,14 @@\n ch('\n-josnei\n+carlos\n '));\n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-14_15-46-21",
+            "content": "@@ -775,24 +775,41 @@\n int %7C None:%0A\n+        try:%0A    \n         for \n@@ -847,16 +847,20 @@\n         \n+   \n+ \n if clien\n@@ -909,32 +909,36 @@\n                 \n+    \n return self.getS\n@@ -972,22 +972,16 @@\n     \n-    else:%0A    \n+except:%0A\n     \n",
+            "lines": "66"
+        },
+        {
+            "label": "2025-11-14_15-47-31",
+            "content": "@@ -1169,128 +1169,8 @@\n try:\n-%0A            if self.search(id) != -1:%0A                print('fail: cliente ja esta no cinema');%0A                return;\n %0A%0A  \n@@ -1277,32 +1277,8 @@\n a');\n-%0A                return;\n %0A%0A  \n@@ -1533,106 +1533,30 @@\n );%0A%0A\n-t.reserve('pedro', 7777, 8);%0Aprint(t.getSeats());%0A%0At.reserve('carlos', 5555, 2);%0Aprint(t.getSeats(\n+print(t.search('josnei'\n ));\n-%0A\n",
+            "lines": "65"
+        },
+        {
+            "label": "2025-11-14_15-50-19",
+            "content": "@@ -770,16 +770,23 @@\n ) -%3E int\n+ %7C None\n :%0A      \n@@ -927,32 +927,58 @@\n index(client);%0A%0A\n+            else:%0A        \n         return -\n@@ -1549,249 +1549,8 @@\n ');%0A\n-%0A%0A    def cancel(self, id: str):%0A        indexSeat =  self.search(id);%0A%0A        if indexSeat == -1:%0A            print('fail: cliente nao esta no cinema');%0A            return;%0A%0A        self.getSeats().insert(indexSeat, None);%0A        return;%0A\n     \n@@ -1696,15 +1696,15 @@\n o', \n-4444, 0\n+7777, 8\n );%0Ap\n@@ -1726,22 +1726,23 @@\n ());%0A%0At.\n-cancel\n+reserve\n ('carlos\n@@ -1746,31 +1746,37 @@\n los'\n-);%0A%0At.cancel('adriana'\n+, 5555, 2);%0Aprint(t.getSeats()\n );%0A\n-%0A%0A\n",
+            "lines": "73"
+        },
+        {
+            "label": "2025-11-14_16-02-49",
+            "content": "@@ -1133,18 +1133,16 @@\n    try:%0A\n-%0A%0A\n         \n@@ -1417,24 +1417,30 @@\n ts()\n-%5B\n+.insert(\n index\n-%5D =\n+,\n  client\n+)\n ;%0A%0A \n@@ -1707,25 +1707,32 @@\n f.getSeats()\n-%5B\n+.insert(\n indexSeat%5D =\n@@ -1732,16 +1732,15 @@\n Seat\n-%5D =\n+,\n  None\n+)\n ;%0A  \n@@ -1956,69 +1956,27 @@\n ');%0A\n-print(t.getSeats());%0A%0At.cancel('adriana');%0Aprint(t.getSeats()\n+%0At.cancel('adriana'\n );%0A%0A\n",
+            "lines": "86"
+        },
+        {
+            "label": "2025-11-14_16-17-14",
+            "content": "from Client import Client;\n\n# Criando classe Theater\nclass Theater:\n\n    # Construtor\n    def __init__(self, capacity: int):\n        self.__seats: list[Client | None] = [None] * capacity;\n    # Fim construtor\n\n    # M\u00e9todo string\n\n    # Fim m\u00e9todo string\n\n    # M\u00e9todo de acesso\n    def getSeats(self) -> list[Client | None]:\n        return self.__seats;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todo mutante\n    def setSeat(self, capacity: int):\n        self.__seats: list[Client |None] = [None] * capacity;\n    # Fim m\u00e9todo mutante\n\n    # M\u00e9todos privados do objeto\n    def verifyIndex(self, index: int) -> bool:\n        try:\n            self.getSeats()[index];\n            return True;\n\n        except IndexError:\n            return False;\n\n    def search(self, name: str) -> int:\n        for client in self.getSeats():\n            if client is not None and client.getId() == name:\n                return self.getSeats().index(client);\n\n        return -1;\n\n    # Fim m\u00e9todos privados do objeto\n\n    # M\u00e9todos p\u00fablicos do objeto\n    def reserve(self, id: str, phone: int, index: int):\n        client: Client = Client(id, phone);\n\n        try:\n\n\n            if self.search(id) != -1:\n                print('fail: cliente ja esta no cinema');\n                return;\n\n            if self.getSeats()[index] is not None:\n                print('fail: cadeira ja esta ocupada');\n                return;\n\n            self.getSeats()[index] = client;\n\n        except IndexError:\n            print('fail: cadeira nao existe');\n\n\n    def cancel(self, id: str):\n        indexSeat =  self.search(id);\n\n        if indexSeat == -1:\n            print('fail: cliente nao esta no cinema');\n            return;\n\n        self.getSeats()[indexSeat] = None;\n        return;\n    # Fim m\u00e9todos p\u00fablicos do objeto\n\nt = Theater(5);\nprint(t.getSeats());\n\nt.reserve('carlos', 5555, 2);\nprint(t.getSeats());\n\nt.reserve('pedro', 4444, 0);\nprint(t.getSeats());\n\nt.cancel('carlos');\nprint(t.getSeats());\n\nt.cancel('adriana');\nprint(t.getSeats());\n\n\n",
+            "lines": "90"
         }
     ]
 }

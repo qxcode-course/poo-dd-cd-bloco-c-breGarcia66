@@ -31,19 +31,60 @@ class Theater:
         except IndexError:
             return False;
 
-    def search(self, name: str) -> int | None:
-        try:
-            for client in self.getSeats():
-                if client is not None and client.getId() == name:
-                    return self.getSeats().index(client);
+    def search(self, name: str) -> int:
+        for client in self.getSeats():
+            if client is not None and client.getId() == name:
+                return self.getSeats().index(client);
 
-        except:
-            return -1;
+        return -1;
 
     # Fim métodos privados do objeto
 
-c1 = Client('Roger', 5555);
-c2 = Client('Pedro', 5555);
-c3 = Client('João', 5555);
+    # Métodos públicos do objeto
+    def reserve(self, id: str, phone: int, index: int):
+        client: Client = Client(id, phone);
+
+        try:
+
+
+            if self.search(id) != -1:
+                print('fail: cliente ja esta no cinema');
+                return;
+
+            if self.getSeats()[index] is not None:
+                print('fail: cadeira ja esta ocupada');
+                return;
+
+            self.getSeats()[index] = client;
+
+        except IndexError:
+            print('fail: cadeira nao existe');
+
+
+    def cancel(self, id: str):
+        indexSeat =  self.search(id);
+
+        if indexSeat == -1:
+            print('fail: cliente nao esta no cinema');
+            return;
+
+        self.getSeats()[indexSeat] = None;
+        return;
+    # Fim métodos públicos do objeto
 
 t = Theater(5);
+print(t.getSeats());
+
+t.reserve('carlos', 5555, 2);
+print(t.getSeats());
+
+t.reserve('pedro', 4444, 0);
+print(t.getSeats());
+
+t.cancel('carlos');
+print(t.getSeats());
+
+t.cancel('adriana');
+print(t.getSeats());
+
+
