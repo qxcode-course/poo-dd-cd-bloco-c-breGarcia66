@@ -1,0 +1,19 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-14_13-44-12",
+            "content": "@@ -185,89 +185,8 @@\n tor%0A\n-    def __str__(self) -%3E str:%0A        return f'%7Bself.getId()%7D:%7Bself.getPhone()%7D';\n %0A   \n@@ -396,222 +396,4 @@\n esso\n-%0A%0A    # M%C3%A9todo mutante%0A    def setId(self, id: str):%0A        self.__id = id;%0A%0A    def setPhone(self, phone: int):%0A        self.__phone = phone;%0A    # Fim m%C3%A9todo mutante%0A%0A%0Ateste = Cliente('Brenno', 5555);%0A%0Aprint(teste);\n",
+            "lines": "20"
+        },
+        {
+            "label": "2025-11-14_13-48-02",
+            "content": "@@ -16,16 +16,18 @@\n e Client\n+e%0A\n %0Aclass C\n@@ -31,18 +31,18 @@\n s Client\n+e\n :\n-%0A\n %0A    # C\n@@ -646,29 +646,53 @@\n nte%0A\n-    %0A# Fim classe Client%0A\n+%0A%0Ateste = Cliente('Brenno', 5555);%0A%0Aprint(teste);\n",
+            "lines": "34"
+        },
+        {
+            "label": "2025-11-14_13-54-08",
+            "content": "# Criando classe Client\nclass Client:\n\n    # Construtor\n    def __init__(self, id: str, phone: int):\n        self.__id: str = id;\n        self.__phone: int = phone;\n    # Fim construtor\n    def __str__(self) -> str:\n        return f'{self.getId()}:{self.getPhone()}';\n    # M\u00e9todo string\n\n    # Fim m\u00e9todo string\n\n    # M\u00e9todo de acesso\n    def getId(self) -> str:\n        return self.__id;\n\n    def getPhone(self) -> int:\n        return self.__phone;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todo mutante\n    def setId(self, id: str):\n        self.__id = id;\n\n    def setPhone(self, phone: int):\n        self.__phone = phone;\n    # Fim m\u00e9todo mutante\n    \n# Fim classe Client\n",
+            "lines": "31"
+        }
+    ]
+}
