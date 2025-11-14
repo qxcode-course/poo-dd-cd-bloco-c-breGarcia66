@@ -7,8 +7,28 @@
         },
         {
             "label": "2025-11-14_13-54-08",
-            "content": "",
+            "content": "@@ -1,359 +0,0 @@\n-from Client import Client;%0Afrom Theater import Theater;%0A%0A# Criando m%C3%A9todo main%0Adef main():%0A  while True:%0A    line: str = input();%0A    args: list%5Bstr%5D = line.split(' ');%0A    print(f'$%7Bline%7D');%0A%0A    match args%5B0%5D:%0A      case 'end':%0A        break;%0A%0A      case _:%0A        print('fail: comando invalido');%0A%0A# Executanto main%0A%0A# Fim execu%C3%A7%C3%A3o main%0A%0A# Fim m%C3%A9todo main\n",
             "lines": "0"
+        },
+        {
+            "label": "2025-11-14_14-56-35",
+            "content": "@@ -1,8 +1,35 @@\n+from Client import Client;%0A\n from The\n@@ -49,16 +49,16 @@\n heater;%0A\n-\n %0A# Crian\n@@ -88,42 +88,8 @@\n ():%0A\n-  theater: Theater = Theater(0);%0A%0A\n   wh\n@@ -209,271 +209,8 @@\n 0%5D:%0A\n-      case 'init':%0A        theater = Theater(int(args%5B1%5D));%0A      %0A      case 'show':%0A        print(theater);%0A      %0A      case 'reserve':%0A        theater.reserve(%0A          id = args%5B1%5D,%0A          phone = int(args%5B2%5D),%0A          index = int(args%5B2%5D)%0A        );%0A%0A\n     \n@@ -317,15 +317,8 @@\n ain%0A\n-main();\n %0A# F\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-11-14_15-03-29",
+            "content": "@@ -176,10 +176,8 @@\n %0A   \n- #\n  pri\n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-14_15-05-41",
+            "content": "@@ -172,16 +172,18 @@\n  ');%0A   \n+ #\n  print(f\n@@ -465,9 +465,9 @@\n rgs%5B\n-3\n+2\n %5D)%0A \n@@ -479,69 +479,8 @@\n   );\n-%0A      %0A      case 'cancel':%0A        theater.cancel(args%5B1%5D);\n %0A%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-14_15-09-28",
+            "content": "from Theater import Theater;\n\n# Criando m\u00e9todo main\ndef main():\n  theater: Theater = Theater(0);\n\n  while True:\n    line: str = input();\n    args: list[str] = line.split(' ');\n    print(f'${line}');\n\n    match args[0]:\n      case 'init':\n        theater = Theater(int(args[1]));\n      \n      case 'show':\n        print(theater);\n      \n      case 'reserve':\n        theater.reserve(\n          id = args[1],\n          phone = int(args[2]),\n          index = int(args[3])\n        );\n      \n      case 'cancel':\n        theater.cancel(args[1]);\n\n      case 'end':\n        break;\n\n      case _:\n        print('fail: comando invalido');\n\n# Executanto main\nmain();\n# Fim execu\u00e7\u00e3o main\n\n# Fim m\u00e9todo main",
+            "lines": "39"
         }
     ]
 }

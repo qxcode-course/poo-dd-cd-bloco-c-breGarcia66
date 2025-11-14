@@ -12,7 +12,12 @@
         },
         {
             "label": "2025-11-14_13-54-08",
-            "content": "# Criando classe Client\nclass Client:\n\n    # Construtor\n    def __init__(self, id: str, phone: int):\n        self.__id: str = id;\n        self.__phone: int = phone;\n    # Fim construtor\n    def __str__(self) -> str:\n        return f'{self.getId()}:{self.getPhone()}';\n    # M\u00e9todo string\n\n    # Fim m\u00e9todo string\n\n    # M\u00e9todo de acesso\n    def getId(self) -> str:\n        return self.__id;\n\n    def getPhone(self) -> int:\n        return self.__phone;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todo mutante\n    def setId(self, id: str):\n        self.__id = id;\n\n    def setPhone(self, phone: int):\n        self.__phone = phone;\n    # Fim m\u00e9todo mutante\n    \n# Fim classe Client\n",
+            "content": "@@ -183,33 +183,8 @@\n tor%0A\n-    %0A    # M%C3%A9todo string%0A\n     \n@@ -261,16 +261,37 @@\n ne()%7D';%0A\n+    # M%C3%A9todo string%0A%0A\n     # Fi\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-14_14-35-12",
+            "content": "# Criando classe Client\nclass Client:\n\n    # Construtor\n    def __init__(self, id: str, phone: int):\n        self.__id: str = id;\n        self.__phone: int = phone;\n    # Fim construtor\n    \n    # M\u00e9todo string\n    def __str__(self) -> str:\n        return f'{self.getId()}:{self.getPhone()}';\n    # Fim m\u00e9todo string\n\n    # M\u00e9todo de acesso\n    def getId(self) -> str:\n        return self.__id;\n\n    def getPhone(self) -> int:\n        return self.__phone;\n    # Fim m\u00e9todo de acesso\n\n    # M\u00e9todo mutante\n    def setId(self, id: str):\n        self.__id = id;\n\n    def setPhone(self, phone: int):\n        self.__phone = phone;\n    # Fim m\u00e9todo mutante\n    \n# Fim classe Client\n",
             "lines": "31"
         }
     ]

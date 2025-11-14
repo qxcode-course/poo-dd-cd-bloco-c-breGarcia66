@@ -6,10 +6,10 @@ class Client:
         self.__id: str = id;
         self.__phone: int = phone;
     # Fim construtor
+    
+    # Método string
     def __str__(self) -> str:
         return f'{self.getId()}:{self.getPhone()}';
-    # Método string
-
     # Fim método string
 
     # Método de acesso

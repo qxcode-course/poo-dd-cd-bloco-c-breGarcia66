@@ -9,7 +9,10 @@ class Theater:
     # Fim construtor
 
     # Método string
+    def __str__(self) -> str:
+        seats = '[' + ' '.join(list(map(lambda client: f'{client}' if client is not None else '-', self.getSeats()))) + ']';
 
+        return f'{seats}';
     # Fim método string
 
     # Método de acesso
@@ -23,7 +26,7 @@ class Theater:
     # Fim método mutante
 
     # Métodos privados do objeto
-    def verifyIndex(self, index: int) -> bool:
+    def __verifyIndex(self, index: int) -> bool:
         try:
             self.getSeats()[index];
             return True;
@@ -31,38 +34,34 @@ class Theater:
         except IndexError:
             return False;
 
-    def search(self, name: str) -> int:
+    def __search(self, name: str) -> int:
         for client in self.getSeats():
             if client is not None and client.getId() == name:
                 return self.getSeats().index(client);
 
         return -1;
-
     # Fim métodos privados do objeto
 
     # Métodos públicos do objeto
     def reserve(self, id: str, phone: int, index: int):
         client: Client = Client(id, phone);
 
-        try:
-
-
-            if self.search(id) != -1:
-                print('fail: cliente ja esta no cinema');
-                return;
-
-            if self.getSeats()[index] is not None:
-                print('fail: cadeira ja esta ocupada');
-                return;
-
-            self.getSeats()[index] = client;
-
-        except IndexError:
+        if self.__verifyIndex(index) == False:
             print('fail: cadeira nao existe');
+            return;
 
+        if self.__search(id) != -1:
+            print('fail: cliente ja esta no cinema');
+            return;
+
+        if self.getSeats()[index] is not None:
+            print('fail: cadeira ja esta ocupada');
+            return;
+
+        self.getSeats()[index] = client;
 
     def cancel(self, id: str):
-        indexSeat =  self.search(id);
+        indexSeat =  self.__search(id);
 
         if indexSeat == -1:
             print('fail: cliente nao esta no cinema');
@@ -71,20 +70,4 @@ class Theater:
         self.getSeats()[indexSeat] = None;
         return;
     # Fim métodos públicos do objeto
-
-t = Theater(5);
-print(t.getSeats());
-
-t.reserve('carlos', 5555, 2);
-print(t.getSeats());
-
-t.reserve('pedro', 4444, 0);
-print(t.getSeats());
-
-t.cancel('carlos');
-print(t.getSeats());
-
-t.cancel('adriana');
-print(t.getSeats());
-
-
+# Fim classe Theater
