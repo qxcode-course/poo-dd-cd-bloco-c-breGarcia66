@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_00-20-55",
+            "content": "@@ -1,673 +0,0 @@\n-# Criando classe Lead%0Aclass Lead:%0A  # Construtor%0A  def __init__(self, thickness: float, hardness: str, size: int):%0A    self.__thickness: float = thickness;%0A    self.__harndess: str = hardness;%0A    self.__size: int = size;%0A  # Fim construtor%0A  # %5B0.5:2B:50%5D%0A  # M%C3%A9todo str%0A  def __str__(self) -%3E str:%0A    return f'%5B%7Bself.getThickness%7D:%7Bself.getHardness()%7D:%7Bself.getSize()%7D%5D';%0A  # Fim m%C3%A9todo str%0A%0A  # M%C3%A9todo de acesso%0A  def getThickness(self) -%3E float:%0A    return self.__thickness;%0A%0A  def getHardness(self) -%3E str:%0A    return self.__harndess;%0A%0A  def getSize(self) -%3E int:%0A    return self.__size;%0A  # Fim m%C3%A9todo de acesso%0A# Fim classe Lead%0A%0Al = Lead(0.5, 'HB', 30);%0A%0Aprint(l);\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-16_00-30-53",
+            "content": "@@ -188,16 +188,8 @@\n ness\n-.upper()\n ;%0A  \n@@ -213,36 +213,12 @@\n t = \n-0;%0A  %0A    self.setSize(\n size\n-)\n ;%0A  \n@@ -234,16 +234,31 @@\n strutor%0A\n+  # %5B0.5:2B:50%5D\n %0A  # M%C3%A9t\n@@ -321,26 +321,24 @@\n getThickness\n-()\n %7D:%7Bself.getH\n@@ -616,532 +616,58 @@\n sso%0A\n-%0A  # M%C3%A9todo mutante%0A  def setSize(self, value: int):%0A    if value %3C 0 or value %3E 50:%0A      print('fail: tamanho invalido para um grafite');%0A      return;%0A  %0A    self.__size = value;%0A  # Fim m%C3%A9todo mutante%0A%0A  # M%C3%A9todo do objeto%0A  def usagePerSheet(self) -%3E int:%0A    match self.getHardness():%0A      case 'HB':%0A        return 1;%0A      %0A      case '2B':%0A        return 2;%0A      %0A      case '4B':%0A        return 4;%0A      %0A      case '6B':%0A        return 6;%0A%0A      case _:%0A        return 0;%0A  # Fim m%C3%A9todo do objeto%0A# Fim classe Lead%0A\n+# Fim classe Lead%0A%0Al = Lead(0.5, 'HB', 30);%0A%0Aprint(l);\n",
+            "lines": "29"
+        },
+        {
+            "label": "2025-11-16_00-44-00",
+            "content": "@@ -105,20 +105,16 @@\n ize: int\n- = 0\n ):%0A    s\n",
+            "lines": "55"
+        },
+        {
+            "label": "2025-11-16_01-33-58",
+            "content": "# Criando classe Lead\nclass Lead:\n  # Construtor\n  def __init__(self, thickness: float, hardness: str, size: int = 0):\n    self.__thickness: float = thickness;\n    self.__harndess: str = hardness.upper();\n    self.__size: int = 0;\n  \n    self.setSize(size);\n  # Fim construtor\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    return f'[{self.getThickness()}:{self.getHardness()}:{self.getSize()}]';\n  # Fim m\u00e9todo str\n\n  # M\u00e9todo de acesso\n  def getThickness(self) -> float:\n    return self.__thickness;\n\n  def getHardness(self) -> str:\n    return self.__harndess;\n\n  def getSize(self) -> int:\n    return self.__size;\n  # Fim m\u00e9todo de acesso\n\n  # M\u00e9todo mutante\n  def setSize(self, value: int):\n    if value < 0 or value > 50:\n      print('fail: tamanho invalido para um grafite');\n      return;\n  \n    self.__size = value;\n  # Fim m\u00e9todo mutante\n\n  # M\u00e9todo do objeto\n  def usagePerSheet(self) -> int:\n    match self.getHardness():\n      case 'HB':\n        return 1;\n      \n      case '2B':\n        return 2;\n      \n      case '4B':\n        return 4;\n      \n      case '6B':\n        return 6;\n\n      case _:\n        return 0;\n  # Fim m\u00e9todo do objeto\n# Fim classe Lead\n",
+            "lines": "55"
+        }
+    ]
+}

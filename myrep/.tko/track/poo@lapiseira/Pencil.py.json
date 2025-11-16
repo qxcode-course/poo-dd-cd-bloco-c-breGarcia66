@@ -1,0 +1,49 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_00-44-00",
+            "content": "@@ -1,580 +0,0 @@\n-from Lead import Lead;%0A%0A# Criando classe Pencil%0Aclass Pencil:%0A  # Construtor%0A  def __init__(self, thickness: float):%0A    self.__thickness = thickness;%0A    self.__tip: Lead %7C None = None;%0A    self.__barrel: list%5BLead%5D = %5B%5D;%0A  # Fim construtor%0A%0A  # M%C3%A9todo de acesso%0A  def getThickness(self) -%3E float:%0A    return self.__thickness;%0A%0A  def getTip(self) -%3E Lead %7C None:%0A    return self.__tip;%0A%0A  def getBarrel(self) -%3E list%5BLead%5D:%0A    return self.__barrel;%0A  # Fim m%C3%A9todo de acesso%0A# Fim classe Pencil%0A%0Ap = Pencil(0.5);%0A%0Aprint(p.getThickness());%0Aprint(p.getTip());%0Aprint(p.getBarrel());\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-16_00-57-18",
+            "content": "@@ -251,970 +251,330 @@\n odo \n-str%0A  def __str__(self) -%3E str:%0A    return f'calibre: %7Bself.getThickness()%7D bico: %7Bself.getTip() if self.getTip() is not None else '%5B%5D'%7D barrel: %3C%7Blist(map(lambda lead: f'%7Blead%7D', self.getBarrel()))%7D%3E'%0A  # Fim m%C3%A9todo str%0A%0A  # M%C3%A9todo de acesso%0A  def getThickness(self) -%3E float:%0A    return self.__thickness;%0A%0A  def getTip(self) -%3E Lead %7C None:%0A    return self.__tip;%0A%0A  def getBarrel(self) -%3E list%5BLead%5D:%0A    return self.__barrel;%0A  # Fim m%C3%A9todo de acesso%0A%0A  # M%C3%A9todo do objeto%0A  def insert(self, lead: Lead) -%3E bool:%0A    if lead.getThickness() != self.getThickness():%0A      print('fail: calibre incompat%C3%ADvel');%0A      return False;%0A%0A    self.getBarrel(). append(lead);%0A    return True;%0A  # Fim m%C3%A9todo do objeto%0A# Fim classe Pencil%0A%0Ap = Pencil(0.5);%0Al1 = Lead(0.5, 'HB', 30);%0Al2 = Lead(0.5, '2B', 30);%0Al3 = Lead(0.5, '4B', 30);%0A%0Aprint(p.getThickness());%0Aprint(p.getTip());%0Aprint(p.getBarrel());%0A%0Ap.insert(l1)%0Ap.insert(l2)%0Ap.insert(l3)%0A%0Aprint(p.getBarrel());%0A%0Aprint(p\n+de acesso%0A  def getThickness(self) -%3E float:%0A    return self.__thickness;%0A%0A  def getTip(self) -%3E Lead %7C None:%0A    return self.__tip;%0A%0A  def getBarrel(self) -%3E list%5BLead%5D:%0A    return self.__barrel;%0A  # Fim m%C3%A9todo de acesso%0A# Fim classe Pencil%0A%0Ap = Pencil(0.5);%0A%0Aprint(p.getThickness());%0Aprint(p.getTip());%0Aprint(p.getBarrel()\n );\n",
+            "lines": "28"
+        },
+        {
+            "label": "2025-11-16_01-08-58",
+            "content": "@@ -398,16 +398,8 @@\n : %3C%7B\n-''.join(\n list\n@@ -445,17 +445,16 @@\n rrel()))\n-)\n %7D%3E'%0A  # \n@@ -935,150 +935,8 @@\n rue;\n-%0A%0A  def pull(self) -%3E bool:%0A    if self.getTip() is not None:%0A      return False;%0A  %0A    self.__tip = self.getBarrel().pop();%0A    return True;\n %0A  #\n@@ -1208,19 +1208,8 @@\n );%0A%0A\n-p.pull();%0A%0A\n prin\n",
+            "lines": "54"
+        },
+        {
+            "label": "2025-11-16_01-14-21",
+            "content": "@@ -1006,56 +1006,8 @@\n ne:%0A\n-      print('fail: ja existe grafite no bico');%0A\n     \n@@ -1063,17 +1063,16 @@\n l().pop(\n-0\n );%0A    r\n@@ -1086,208 +1086,8 @@\n rue;\n-%0A%0A  def remove(self) -%3E Lead %7C None:%0A    if self.getTip() is None:%0A      print('fail: nao tem grafite no bico');%0A      return;%0A%0A    oldLead = self.getTip();%0A    self.__tip = None;%0A%0A    return oldLead;\n %0A  #\n@@ -1379,27 +1379,4 @@\n (p);\n-%0A%0Ap.remove();%0Aprint(p);\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-16_01-19-50",
+            "content": "@@ -1336,480 +1336,8 @@\n ad;%0A\n-%0A  def write(self):%0A    if self.getTip() is None:%0A      print('fail: nao existe grafite no bico');%0A      return;%0A  %0A    if self.getTip().getSize() ==  10 and self.getTip():%0A      print('fail: tamanho insuficiente');%0A      return;%0A%0A    if self.getTip().getSize() - 10 %3C self.getTip().usagePerSheet():%0A      print('fail: folha incompleta');%0A      self.getTip().setSize(10);%0A      return;%0A%0A    self.getTip().setSize(self.getTip().getSize() - self.getTip().usagePerSheet());%0A%0A\n   # \n@@ -1415,15 +1415,15 @@\n 5, '\n-2\n+H\n B', \n-1\n 3\n+0\n );%0Al\n@@ -1632,34 +1632,13 @@\n %0A%0Ap.\n-write();%0Aprint(p);%0A%0Ap.writ\n+remov\n e();\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_01-33-58",
+            "content": "@@ -1836,20 +1836,312 @@\n %0A# Fim classe Pencil\n+%0A%0Ap = Pencil(0.5);%0Al1 = Lead(0.5, '2B', 13);%0Al2 = Lead(0.5, '2B', 30);%0Al3 = Lead(0.5, '4B', 30);%0A%0Aprint(p.getThickness());%0Aprint(p.getTip());%0Aprint(p.getBarrel());%0A%0Ap.insert(l1)%0Ap.insert(l2)%0Ap.insert(l3)%0A%0Aprint(p.getBarrel());%0A%0Ap.pull();%0A%0Aprint(p);%0A%0Ap.write();%0Aprint(p);%0A%0Ap.write();%0Aprint(p);\n",
+            "lines": "97"
+        },
+        {
+            "label": "2025-11-16_01-35-41",
+            "content": "@@ -322,17 +322,16 @@\n kness()%7D\n-,\n  bico: %7B\n@@ -383,17 +383,16 @@\n se '%5B%5D'%7D\n-,\n  barrel:\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-16_01-46-52",
+            "content": "@@ -390,14 +390,14 @@\n '%7D, \n-tambor\n+barrel\n : %3C%7B\n",
+            "lines": "72"
+        },
+        {
+            "label": "2025-11-16_01-47-05",
+            "content": "from Lead import Lead;\n\n# Criando classe Pencil\nclass Pencil:\n  # Construtor\n  def __init__(self, thickness: float):\n    self.__thickness = thickness;\n    self.__tip: Lead | None = None;\n    self.__barrel: list[Lead] = [];\n  # Fim construtor\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    return f'calibre: {self.getThickness()}, bico: {self.getTip() if self.getTip() is not None else '[]'}, tambor: <{''.join(list(map(lambda lead: f'{lead}', self.getBarrel())))}>'\n  # Fim m\u00e9todo str\n\n  # M\u00e9todo de acesso\n  def getThickness(self) -> float:\n    return self.__thickness;\n\n  def getTip(self) -> Lead | None:\n    return self.__tip;\n\n  def getBarrel(self) -> list[Lead]:\n    return self.__barrel;\n  # Fim m\u00e9todo de acesso\n\n  # M\u00e9todo do objeto\n  def insert(self, lead: Lead) -> bool:\n    if lead.getThickness() != self.getThickness():\n      print('fail: calibre incompat\u00edvel');\n      return False;\n\n    self.getBarrel(). append(lead);\n    return True;\n\n  def pull(self) -> bool:\n    if self.getTip() is not None:\n      print('fail: ja existe grafite no bico');\n      return False;\n  \n    self.__tip = self.getBarrel().pop(0);\n    return True;\n\n  def remove(self) -> Lead | None:\n    if self.getTip() is None:\n      print('fail: nao tem grafite no bico');\n      return;\n\n    oldLead = self.getTip();\n    self.__tip = None;\n\n    return oldLead;\n\n  def write(self):\n    if self.getTip() is None:\n      print('fail: nao existe grafite no bico');\n      return;\n  \n    if self.getTip().getSize() ==  10 and self.getTip():\n      print('fail: tamanho insuficiente');\n      return;\n\n    if self.getTip().getSize() - 10 < self.getTip().usagePerSheet():\n      print('fail: folha incompleta');\n      self.getTip().setSize(10);\n      return;\n\n    self.getTip().setSize(self.getTip().getSize() - self.getTip().usagePerSheet());\n\n  # Fim m\u00e9todo do objeto\n# Fim classe Pencil",
+            "lines": "72"
+        }
+    ]
+}
