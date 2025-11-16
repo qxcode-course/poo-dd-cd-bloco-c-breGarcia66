@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-15_14-49-12",
+            "content": "@@ -35,22 +35,8 @@\n er:%0A\n-  # Contrutor%0A\n   de\n@@ -109,18 +109,16 @@\n elf.\n-__\n pos: int\n  = 0\n@@ -117,12 +117,8 @@\n  int\n- = 0\n ;%0A  \n@@ -149,645 +149,59 @@\n ue;%0A\n-  # Fim construtor%0A%0A  # M%C3%A9todo str%0A  def __str__(self) -%3E str:%0A    return f'%7Bself.getLabel()%7D';%0A  # Fim m%C3%A9todo str%0A%0A  # M%C3%A9todo de acesso%0A  def getLabel(self) -%3E int:%0A    return self.__label;%0A%0A  def getPos(self) -%3E int:%0A    return self.__pos;%0A%0A  def isFree(self) -%3E bool:%0A    return self.__free;%0A  # Fim m%C3%A9todo de acesso%0A%0A  # M%C3%A9todo mutante%0A  def setPos(self, pos: int):%0A    self.__pos = pos;%0A%0A  def setFree(self, free: bool):%0A    self.__free = free;%0A%0A  def setLabel(self, label: int):%0A    self.__label = label;%0A  # Fim m%C3%A9todo mutante%0A# Fim classe Player%0A%0Ap = Player(1);%0A%0Aprint(p);%0A%0Aprint(p.getLabel());%0Aprint(p.getPos());%0Aprint(p.isFree());\n+%0Ap = Player(1);%0A%0Aprint(p.pos)%0Ap.pos = 50;%0Aprint(p.pos)\n %0A\n",
+            "lines": "12"
+        },
+        {
+            "label": "2025-11-15_14-59-47",
+            "content": "@@ -707,20 +707,107 @@\n # Fim classe Player%0A\n+%0Ap = Player(1);%0A%0Aprint(p);%0A%0Aprint(p.getLabel());%0Aprint(p.getPos());%0Aprint(p.isFree());%0A\n",
+            "lines": "44"
+        },
+        {
+            "label": "2025-11-15_15-15-09",
+            "content": "@@ -136,9 +136,9 @@\n t = \n-1\n+0\n ;%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-15_23-16-00",
+            "content": "@@ -136,9 +136,9 @@\n t = \n-0\n+1\n ;%0A  \n",
+            "lines": "36"
+        },
+        {
+            "label": "2025-11-15_23-20-10",
+            "content": "# Criando classe Player\nclass Player:\n  # Contrutor\n  def __init__(self, label: int):\n    self.__label: int = label;\n    self.__pos: int = 0;\n    self.__free: bool = True;\n  # Fim construtor\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    return f'{self.getLabel()}';\n  # Fim m\u00e9todo str\n\n  # M\u00e9todo de acesso\n  def getLabel(self) -> int:\n    return self.__label;\n\n  def getPos(self) -> int:\n    return self.__pos;\n\n  def isFree(self) -> bool:\n    return self.__free;\n  # Fim m\u00e9todo de acesso\n\n  # M\u00e9todo mutante\n  def setPos(self, pos: int):\n    self.__pos = pos;\n\n  def setFree(self, free: bool):\n    self.__free = free;\n\n  def setLabel(self, label: int):\n    self.__label = label;\n  # Fim m\u00e9todo mutante\n# Fim classe Player\n",
+            "lines": "36"
+        }
+    ]
+}

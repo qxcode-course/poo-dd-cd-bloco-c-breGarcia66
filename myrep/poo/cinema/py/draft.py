@@ -35,5 +35,4 @@ def main():
 # Executanto main
 main();
 # Fim execução main
-
 # Fim método main

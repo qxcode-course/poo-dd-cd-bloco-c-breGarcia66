@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: ''
-  cache_timestamp: '2025-11-14 14:05:05'
+  cache_timestamp: '2025-11-15 21:46:08'
   filters:
   - listas
 expanded:
@@ -22,6 +22,7 @@ tasks:
   poo@array: '{rate:80, iagen:sim, other:sim, alone:7, study:60}'
   poo@budega: '{rate:100, other:sim, alone:5, study:270, idx:2}'
   poo@cinema: '{rate:100, alone:10, study:170, idx:2}'
+  poo@tabuleiro: '{rate:100, alone:10, study:330, idx:2}'
 flags:
   quests: 0
   tracks: 0

@@ -27,8 +27,13 @@
         },
         {
             "label": "2025-11-14_15-09-28",
-            "content": "from Theater import Theater;\n\n# Criando m\u00e9todo main\ndef main():\n  theater: Theater = Theater(0);\n\n  while True:\n    line: str = input();\n    args: list[str] = line.split(' ');\n    print(f'${line}');\n\n    match args[0]:\n      case 'init':\n        theater = Theater(int(args[1]));\n      \n      case 'show':\n        print(theater);\n      \n      case 'reserve':\n        theater.reserve(\n          id = args[1],\n          phone = int(args[2]),\n          index = int(args[3])\n        );\n      \n      case 'cancel':\n        theater.cancel(args[1]);\n\n      case 'end':\n        break;\n\n      case _:\n        print('fail: comando invalido');\n\n# Executanto main\nmain();\n# Fim execu\u00e7\u00e3o main\n\n# Fim m\u00e9todo main",
+            "content": "@@ -672,16 +672,17 @@\n %C3%A3o main%0A\n+%0A\n # Fim m%C3%A9\n",
             "lines": "39"
+        },
+        {
+            "label": "2025-11-15_14-32-23",
+            "content": "from Theater import Theater;\n\n# Criando m\u00e9todo main\ndef main():\n  theater: Theater = Theater(0);\n\n  while True:\n    line: str = input();\n    args: list[str] = line.split(' ');\n    print(f'${line}');\n\n    match args[0]:\n      case 'init':\n        theater = Theater(int(args[1]));\n      \n      case 'show':\n        print(theater);\n      \n      case 'reserve':\n        theater.reserve(\n          id = args[1],\n          phone = int(args[2]),\n          index = int(args[3])\n        );\n      \n      case 'cancel':\n        theater.cancel(args[1]);\n\n      case 'end':\n        break;\n\n      case _:\n        print('fail: comando invalido');\n\n# Executanto main\nmain();\n# Fim execu\u00e7\u00e3o main\n# Fim m\u00e9todo main",
+            "lines": "38"
         }
     ]
 }
