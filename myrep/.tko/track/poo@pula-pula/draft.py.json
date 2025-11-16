@@ -1,0 +1,24 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_13-42-07",
+            "content": "@@ -1,405 +0,0 @@\n-from Kid import Kid;%0Afrom Trampoline import Trampoline;%0A%0A# Criando m%C3%A9todo main%0Adef main():%0A  trampoline: Trampoline = Trampoline();%0A%0A  while True:%0A    line: str = input();%0A    args: list%5Bstr%5D = line.spli(' ');%0A    # print(f'$%7Bline%7D');%0A%0A    match args%5B0%5D:%0A      case 'end':%0A        break;%0A%0A      case _:%0A        print('fail: comando invalido');%0A# Fim m%C3%A9todo main%0A%0A# Executando main%0Amain()%0A# Fim de execu%C3%A7%C3%A3o\n",
+            "lines": "0"
+        },
+        {
+            "label": "2025-11-16_15-03-05",
+            "content": "@@ -196,17 +196,16 @@\n ine.spli\n-t\n (' ');%0A \n@@ -252,386 +252,8 @@\n 0%5D:%0A\n-      case 'arrive':%0A        kid: Kid = Kid(%0A          name = args%5B1%5D,%0A          age = int(args%5B2%5D)%0A        );%0A      %0A        trampoline.arrive(kid);%0A      %0A      case 'show':%0A        print(trampoline);%0A      %0A      case 'enter':%0A        trampoline.enter();%0A      %0A      case 'leave':%0A        trampoline.leave();%0A      %0A      case 'remove':%0A        trampoline.remove(args%5B1%5D);%0A%0A\n     \n",
+            "lines": "23"
+        },
+        {
+            "label": "2025-11-16_15-07-54",
+            "content": "@@ -207,16 +207,18 @@\n  ');%0A   \n+ #\n  print(f\n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-16_15-08-15",
+            "content": "from Kid import Kid;\nfrom Trampoline import Trampoline;\n\n# Criando m\u00e9todo main\ndef main():\n  trampoline: Trampoline = Trampoline();\n\n  while True:\n    line: str = input();\n    args: list[str] = line.split(' ');\n    print(f'${line}');\n\n    match args[0]:\n      case 'arrive':\n        kid: Kid = Kid(\n          name = args[1],\n          age = int(args[2])\n        );\n      \n        trampoline.arrive(kid);\n      \n      case 'show':\n        print(trampoline);\n      \n      case 'enter':\n        trampoline.enter();\n      \n      case 'leave':\n        trampoline.leave();\n      \n      case 'remove':\n        trampoline.remove(args[1]);\n\n      case 'end':\n        break;\n\n      case _:\n        print('fail: comando invalido');\n# Fim m\u00e9todo main\n\n# Executando main\nmain()\n# Fim de execu\u00e7\u00e3o",
+            "lines": "43"
+        }
+    ]
+}

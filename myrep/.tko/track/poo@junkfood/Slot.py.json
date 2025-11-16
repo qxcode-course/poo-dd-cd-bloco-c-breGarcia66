@@ -1,0 +1,59 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_15-20-04",
+            "content": "@@ -15,17 +15,16 @@\n se Slot%0A\n-%0A\n class Sl\n@@ -33,973 +33,18 @@\n :%0A  \n-# Construtor%0A  def __init__(%0A      self,%0A      name: str = 'empity',%0A      price: float = 0.00,%0A      quantity: int = 0 %0A  ):%0A    self.__name = name;%0A    self.__price = price;%0A    self.__quantity = quantity;%0A  # Fim construtor%0A%0A%0A  # M%C3%A9todo str%0A  def __str__(self) -%3E str:%0A    return f'%7Bself.getName():0%3E7%7D'%0A  # Fim m%C3%A9todo str%0A%0A%0A  # M%C3%A9todo de acesso%0A  def getName(self) -%3E str:%0A    return self.__name;%0A%0A  def getPrice(self) -%3E float:%0A    return self.__price;%0A%0A  def getQuantity(self) -%3E int:%0A    return self.__quantity;%0A  # Fim m%C3%A9todo de acesso%0A%0A%0A  # M%C3%A9todo mutante%0A  def setName(self, name: str):%0A    self.__name = name;%0A%0A  def setPrice(self, price: float):%0A    if price %3C 0:%0A      print('fail: preco invalido');%0A      return;%0A%0A    self.__price = price;%0A%0A  def setQuantity(self, quantity: int):%0A    if quantity %3C 0:%0A      print('fail: quantidade invalida');%0A      return;%0A%0A    self.__quantity = quantity;%0A  # Fim m%C3%A9todo mutante%0A%0A# Fim classe Slot%0A%0As = Slot()%0A%0Aprint(s);\n+def __init__()\n",
+            "lines": "3"
+        },
+        {
+            "label": "2025-11-16_15-39-35",
+            "content": "@@ -317,23 +317,11 @@\n urn \n+f\n '%7B\n-0%3E7%7D'.format(\n self\n@@ -330,17 +330,22 @@\n etName()\n-)\n+:0%3E7%7D'\n %0A  # Fim\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-16_15-41-03",
+            "content": "@@ -315,17 +315,16 @@\n eturn '%7B\n-:\n 0%3E7%7D'.fo\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-16_15-41-17",
+            "content": "@@ -263,39 +263,8 @@\n r%0A%0A%0A\n-  # %5B   empty : 0 U : 0.00 RS%5D%0A\n   # \n@@ -310,30 +310,21 @@\n     \n-junkFoodName = '%7B:''%3E8\n+return '%7B:0%3E7\n %7D'.f\n@@ -348,95 +348,8 @@\n e())\n-;%0A%0A    return f'%5B %7BjunkFoodName%7D : %7Bself.getQuantity()%7D U : %7Bself.getPrice():2f%7D RS %5D';\n %0A  #\n@@ -999,48 +999,9 @@\n lot(\n-name='todinho', quantity=3, price=2.50);\n+)\n %0A%0Apr\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-16_15-46-41",
+            "content": "@@ -362,9 +362,9 @@\n :''%3E\n-7\n+8\n %7D'.f\n@@ -461,17 +461,16 @@\n Price():\n-.\n 2f%7D RS %5D\n@@ -1167,40 +1167,8 @@\n 0);%0A\n-s2 = Slot();%0A%0Aprint(s);%0Aprint();\n %0Apri\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-16_15-48-09",
+            "content": "@@ -93,16 +93,17 @@\n r = 'emp\n+i\n ty',%0A   \n@@ -255,24 +255,55 @@\n onstrutor%0A%0A%0A\n+  # %5B   empty : 0 U : 0.00 RS%5D%0A\n   # M%C3%A9todo s\n@@ -349,25 +349,16 @@\n FoodName\n-Formatted\n  = '%7B:''\n@@ -419,17 +419,8 @@\n Name\n-Formatted\n %7D : \n@@ -1204,11 +1204,10 @@\n %0Aprint(s\n-2\n );\n",
+            "lines": "64"
+        },
+        {
+            "label": "2025-11-16_15-58-53",
+            "content": "@@ -1087,20 +1087,114 @@\n %0A%0A# Fim classe Slot%0A\n+%0As = Slot(name='todinho', quantity=3, price=2.50);%0As2 = Slot();%0A%0Aprint(s);%0Aprint();%0Aprint(s2);\n",
+            "lines": "63"
+        },
+        {
+            "label": "2025-11-16_16-19-55",
+            "content": "@@ -455,17 +455,16 @@\n .2f%7D RS \n- \n %5D';%0A  # \n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-16_17-41-05",
+            "content": "@@ -454,16 +454,18 @@\n :.2f%7D RS\n+  \n %5D';%0A  # \n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-16_17-41-10",
+            "content": "@@ -170,21 +170,16 @@\n f.__name\n-: str\n  = name;\n@@ -195,23 +195,16 @@\n .__price\n-: float\n  = price\n@@ -224,21 +224,16 @@\n quantity\n-: int\n  = quant\n",
+            "lines": "56"
+        },
+        {
+            "label": "2025-11-16_17-52-41",
+            "content": "# Criando classe Slot\n\nclass Slot:\n  # Construtor\n  def __init__(\n      self,\n      name: str = 'empty',\n      price: float = 0.00,\n      quantity: int = 0 \n  ):\n    self.__name: str = name;\n    self.__price: float = price;\n    self.__quantity: int = quantity;\n  # Fim construtor\n\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    junkFoodNameFormatted = '{:''>7}'.format(self.getName());\n\n    return f'[ {junkFoodNameFormatted} : {self.getQuantity()} U : {self.getPrice():.2f} RS]';\n  # Fim m\u00e9todo str\n\n\n  # M\u00e9todo de acesso\n  def getName(self) -> str:\n    return self.__name;\n\n  def getPrice(self) -> float:\n    return self.__price;\n\n  def getQuantity(self) -> int:\n    return self.__quantity;\n  # Fim m\u00e9todo de acesso\n\n\n  # M\u00e9todo mutante\n  def setName(self, name: str):\n    self.__name = name;\n\n  def setPrice(self, price: float):\n    if price < 0:\n      print('fail: preco invalido');\n      return;\n\n    self.__price = price;\n\n  def setQuantity(self, quantity: int):\n    if quantity < 0:\n      print('fail: quantidade invalida');\n      return;\n\n    self.__quantity = quantity;\n  # Fim m\u00e9todo mutante\n\n# Fim classe Slot\n",
+            "lines": "56"
+        }
+    ]
+}

@@ -1,0 +1,74 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_13-50-21",
+            "content": "@@ -427,75 +427,8 @@\n eto%0A\n-  def arrive(self, kid: Kid):%0A    self.getWaiting().insert(0, kid);\n %0A  #\n@@ -474,17 +474,16 @@\n poline%0A%0A\n-%0A\n t = Tram\n@@ -496,109 +496,31 @@\n ();%0A\n-k1 = Kid('carlos', 4)%0Ak2 = Kid('ana', 5)%0Ak3 = Kid('joao', 3)%0A%0At.arrive(k1)%0At.arrive(k2)%0At.arrive(k3)%0A\n+%0Aprint(t.getPlaying());\n %0Apri\n@@ -533,12 +533,13 @@\n etWaiting())\n+;\n",
+            "lines": "31"
+        },
+        {
+            "label": "2025-11-16_13-56-16",
+            "content": "@@ -494,196 +494,8 @@\n id);\n-%0A%0A  def removeFromList(self, name: str, list: list%5BKid%5D) -%3E Kid %7C None:%0A    listReturn = list(map(lambda kid: kid if kid.getName() == name else None, list));%0A    %0A    return listReturn%5B0%5D;\n %0A  #\n@@ -546,17 +546,8 @@\n e%0A%0A%0A\n-# Testes%0A\n t = \n@@ -666,35 +666,14 @@\n 3)%0A%0A\n-t.removeFromList('carlos', \n+print(\n t.ge\n@@ -683,9 +683,8 @@\n iting())\n-;\n",
+            "lines": "39"
+        },
+        {
+            "label": "2025-11-16_14-04-20",
+            "content": "@@ -570,61 +570,95 @@\n     \n-for kid in list:%0A      if name == kid.getName():\n+listReturn = list(map(lambda kid: kid if kid.getName() == name else None, list));\n %0A    \n+%0A\n     \n@@ -668,24 +668,21 @@\n urn \n-kid;%0A%0A    r\n+listR\n eturn\n+%5B0%5D\n ;%0A  \n",
+            "lines": "45"
+        },
+        {
+            "label": "2025-11-16_14-10-32",
+            "content": "@@ -591,16 +591,24 @@\n       if\n+ name ==\n  kid.get\n@@ -617,16 +617,8 @@\n me()\n- == name\n :%0A  \n@@ -832,14 +832,8 @@\n 3)%0A%0A\n-print(\n t.re\n@@ -870,10 +870,9 @@\n iting())\n-)\n ;\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-16_14-12-25",
+            "content": "@@ -498,17 +498,16 @@\n %0A%0A  def \n-_\n removeFr\n@@ -651,86 +651,8 @@\n urn;\n-%0A%0A  def enter(self):%0A    self.getPlaying().insert(0, self.getWaiting().pop());\n %0A  #\n@@ -790,29 +790,8 @@\n , 3)\n-%0Ak4 = Kid('maria', 4)\n %0A%0At.\n@@ -831,148 +831,55 @@\n k3)%0A\n-t.arrive(k4)%0A%0Aprint(t.getWaiting());%0Aprint(t.getPlaying(), '%5Cn');%0A%0At.enter();%0At.enter();%0A%0Aprint(t.getWaiting());%0Aprint(t.getPlaying(), '%5Cn');%0A%0A%0A\n+%0Aprint(t.removeFromList('carlos', t.getWaiting()));\n",
+            "lines": "47"
+        },
+        {
+            "label": "2025-11-16_14-17-52",
+            "content": "@@ -209,134 +209,8 @@\n str%0A\n-  def __str__(self):%0A    kidsWaiting = ', '.join(list(map(lambda kid: f'%7Bkid%7D', self.getWaiting())));%0A%0A    return kidsWaiting;\n %0A  #\n@@ -952,109 +952,30 @@\n nt(t\n-);%0A%0A# print(list(map(lambda kid: f'%7Bkid%7D', t.getWaiting())));%0A# print(list(map(lambda kid: f'%7Bkid%7D', \n+.getWaiting());%0Aprint(\n t.ge\n@@ -988,17 +988,18 @@\n ng()\n-))\n+, '%5Cn'\n );%0A%0A\n-%0A# \n t.en\n@@ -1005,18 +1005,16 @@\n nter();%0A\n-# \n t.enter(\n@@ -1021,47 +1021,14 @@\n );%0A%0A\n-# \n print(\n-list(map(lambda kid: f'%7Bkid%7D', \n t.ge\n@@ -1042,51 +1042,16 @@\n g())\n-)\n-)\n ;%0A\n-# \n print(\n-list(map(lambda kid: f'%7Bkid%7D', \n t.ge\n@@ -1060,15 +1060,19 @@\n laying()\n-))\n+, '%5Cn'\n );%0A%0A%0A\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-16_14-25-56",
+            "content": "@@ -310,89 +310,8 @@\n )));\n-%0A    kidsPlaying = ', '.join(list(map(lambda kid: f'%7Bkid%7D', self.getPlaying())));\n %0A%0A  \n@@ -323,12 +323,8 @@\n urn \n-f'%5B%7B\n kids\n@@ -334,30 +334,8 @@\n ting\n-%7D%5D =%3E %5B%7BkidsPlaying%7D%5D'\n ;%0A  \n",
+            "lines": "67"
+        },
+        {
+            "label": "2025-11-16_14-27-32",
+            "content": "@@ -963,86 +963,8 @@\n ());\n-%0A%0A  def leave(self):%0A    self.getWaiting().insert(0, self.getPlaying().pop());\n %0A  #\n@@ -1189,100 +1189,267 @@\n );%0A%0A\n-t.enter();%0At.enter();%0A%0Aprint(t)%0A%0At.leave();%0At.leave\n+# print(list(map(lambda kid: f'%7Bkid%7D', t.getWaiting())));%0A# print(list(map(lambda kid: f'%7Bkid%7D', t.getPlaying())));%0A%0A%0A# t.enter();%0A# t.enter\n ()\n+;\n %0A%0A\n+# \n print(\n-t)%0A%0At.enter();%0At.enter();%0A%0Aprint(t)\n+list(map(lambda kid: f'%7Bkid%7D', t.getWaiting())));%0A# print(list(map(lambda kid: f'%7Bkid%7D', t.getPlaying())));%0A%0A%0A\n",
+            "lines": "68"
+        },
+        {
+            "label": "2025-11-16_14-29-43",
+            "content": "@@ -656,16 +656,85 @@\n  objeto%0A\n+  def arrive(self, kid: Kid):%0A    self.getWaiting().insert(0, kid);%0A%0A\n   def _r\n@@ -792,24 +792,24 @@\n Kid %7C None:%0A\n-\n     for kid \n@@ -887,77 +887,8 @@\n n;%0A%0A\n-  def arrive(self, kid: Kid):%0A    self.getWaiting().insert(0, kid);%0A%0A\n   de\n@@ -1041,298 +1041,8 @@\n ());\n-%0A%0A  def remove(self, name: str) -%3E Kid %7C None:%0A    playingListReturn = self._removeFromList(name, self.getPlaying());%0A    waitingListReturn = self._removeFromList(name, self.getWaiting());%0A%0A    if playingListReturn is not None:%0A      return playingListReturn;%0A%0A    return waitingListReturn;\n %0A  #\n@@ -1339,30 +1339,30 @@\n nter();%0At.enter();%0A%0A\n+\n print(t)\n %0A%0A\n@@ -1339,30 +1339,28 @@\n nter();%0At.enter();%0A%0Aprint(t)\n-%0A%0A\n",
+            "lines": "74"
+        },
+        {
+            "label": "2025-11-16_14-37-22",
+            "content": "@@ -799,33 +799,11 @@\n urn \n-list.pop(list.index(\n kid\n-))\n ;%0A%0A \n@@ -1655,53 +1655,4 @@\n t)%0A%0A\n-t.remove('carlos');%0At.remove('maria');%0A%0Aprint(t);\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-16_14-55-30",
+            "content": "@@ -1328,146 +1328,27 @@\n     \n-elif waitingListReturn is not None:%0A      return waitingListReturn;%0A%0A    else:%0A      print(f'fail: %7Bname%7D nao esta no pula-pula');%0A      r\n+return waitingListR\n etur\n@@ -1715,29 +1715,8 @@\n a');\n-%0At.remove('adriano');\n %0A%0Apr\n",
+            "lines": "88"
+        },
+        {
+            "label": "2025-11-16_15-03-05",
+            "content": "@@ -1502,24 +1502,368 @@\n # Fim classe Trampoline%0A\n+%0A%0A# Testes%0At = Trampoline();%0Ak1 = Kid('carlos', 4)%0Ak2 = Kid('ana', 5)%0Ak3 = Kid('joao', 3)%0Ak4 = Kid('maria', 4)%0A%0At.arrive(k1)%0At.arrive(k2)%0At.arrive(k3)%0At.arrive(k4)%0A%0Aprint(t);%0A%0At.enter();%0At.enter();%0A%0Aprint(t)%0A%0At.leave();%0At.leave()%0A%0Aprint(t)%0A%0At.enter();%0At.enter();%0A%0Aprint(t)%0A%0At.remove('carlos');%0At.remove('maria');%0At.remove('adriano');%0A%0Aprint(t);\n",
+            "lines": "94"
+        },
+        {
+            "label": "2025-11-16_15-07-54",
+            "content": "@@ -1006,19 +1006,8 @@\n f):%0A\n-    try:%0A  \n     \n@@ -1065,46 +1065,8 @@\n );%0A%0A\n-    except IndexError:%0A      return;%0A%0A\n   de\n",
+            "lines": "58"
+        },
+        {
+            "label": "2025-11-16_15-10-10",
+            "content": "from Kid import Kid;\n\n# Criando classe Trampoline\nclass Trampoline:\n  # Construtor\n  def __init__(self):\n    self.__playing: list[Kid] = [];\n    self.__waiting: list[Kid] = [];\n  # Fim construtor\n\n  # M\u00e9todo str\n  def __str__(self):\n    kidsWaiting = ', '.join(list(map(lambda kid: f'{kid}', self.getWaiting())));\n    kidsPlaying = ', '.join(list(map(lambda kid: f'{kid}', self.getPlaying())));\n\n    return f'[{kidsWaiting}] => [{kidsPlaying}]';\n  # Fim m\u00e9todo str\n\n  # M\u00e9todo de acesso\n  def getPlaying(self) -> list[Kid]:\n    return self.__playing;\n\n  def getWaiting(self) -> list[Kid]:\n    return self.__waiting;\n  # Fim m\u00e9todo de acesso\n\n  # M\u00e9todo do objeto\n  def _removeFromList(self, name: str, list: list[Kid]) -> Kid | None:\n    for kid in list:\n      if kid.getName() == name:\n        return list.pop(list.index(kid));\n\n    return;\n\n  def arrive(self, kid: Kid):\n    self.getWaiting().insert(0, kid);\n\n  def enter(self):\n    self.getPlaying().insert(0, self.getWaiting().pop());\n\n  def leave(self):\n    try:\n      self.getWaiting().insert(0, self.getPlaying().pop());\n\n    except IndexError:\n      return;\n\n  def remove(self, name: str) -> Kid | None:\n    playingListReturn = self._removeFromList(name, self.getPlaying());\n    waitingListReturn = self._removeFromList(name, self.getWaiting());\n\n    if playingListReturn is not None:\n      return playingListReturn;\n\n    elif waitingListReturn is not None:\n      return waitingListReturn;\n\n    else:\n      print(f'fail: {name} nao esta no pula-pula');\n      return;\n  # Fim m\u00e9todo do objeto\n# Fim classe Trampoline\n",
+            "lines": "62"
+        }
+    ]
+}

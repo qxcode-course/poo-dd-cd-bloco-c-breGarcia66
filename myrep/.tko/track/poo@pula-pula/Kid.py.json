@@ -1,0 +1,14 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_13-42-07",
+            "content": "@@ -576,20 +576,36 @@\n nte%0A\n-# Fim classe Kid\n+%0Ak = Kid('pedro', 5);%0A%0Aprint(k);\n",
+            "lines": "32"
+        },
+        {
+            "label": "2025-11-16_13-50-21",
+            "content": "# Criando calsse Kid\nclass Kid:\n  # Construtor\n  def __init__(self, name: str, age: int):\n    self.__name: str = name;\n    self.__age: int = age;\n  # Fim construtor\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    return f'{self.getName()}:{self.getAge()}';\n  # Fim m\u00e9todo str\n\n  # M\u00e9todo de acesso\n  def getName(self) -> str:\n    return self.__name;\n\n  def getAge(self) -> int:\n    return self.__age;\n  # Fim m\u00e9todo de acesso\n\n  # M\u00e9todo mutante\n  def setName(self, name: str):\n    self.__name = name;\n\n  def setAge(self, age: int):\n    self.__age =  age;\n  # Fim m\u00e9todo mutante\n# Fim classe Kid",
+            "lines": "29"
+        }
+    ]
+}

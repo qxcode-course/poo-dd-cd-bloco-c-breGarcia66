@@ -1,0 +1,144 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-16_15-58-53",
+            "content": "@@ -407,641 +407,151 @@\n ts;%0A\n-%0A  def getProfit(self) -%3E float:%0A    return self.__profit;%0A%0A  def getCash(self) -%3E float:%0A    return self.__cash;%0A%0A  def getCapacity(self) -%3E int:%0A    return self.__capacity;%0A  # Fim m%C3%A9todo de acesso%0A%0A%0A  # M%C3%A9todo mutante%0A  def setSlot(self, index: int, name: str, quantity: int, price: float):%0A    slot: Slot = Slot(%0A      name = name,%0A      quantity = quantity,%0A      price = price%0A    );%0A%0A    self.getSlot().append(slot);%0A  # Fim m%C3%A9todo mutante%0A%0A%0A  # M%C3%A9todo do objeto%0A%0A  # Fim m%C3%A9todo do objeto%0A%0A# Fim classe VendingMachine%0A%0A# testes%0Avm = VendingMachine(6);%0A%0Aprint(vm.getSlot());%0A%0Avm.setSlot(0, 'todinho', 6, 2.5);%0A%0Aprint(vm.getSlot());\n+  # Fim m%C3%A9todo de acesso%0A%0A%0A  # M%C3%A9todo mutante%0A%0A  # Fim m%C3%A9todo mutante%0A%0A%0A  # M%C3%A9todo do objeto%0A%0A  # Fim m%C3%A9todo do objeto%0A%0A# Fim classe VendingMachine\n",
+            "lines": "35"
+        },
+        {
+            "label": "2025-11-16_16-14-10",
+            "content": "@@ -973,41 +973,8 @@\n int(\n-list(map(lambda slot: f'%7Bslot%7D', \n vm.g\n@@ -982,18 +982,16 @@\n tSlot())\n-))\n ;%0A%0Avm.se\n@@ -1023,83 +1023,15 @@\n 5);%0A\n-vm.setSlot(0, 'xaverde', 10, 5.0);%0A%0Aprint(list(map(lambda slot: f'%7Bslot%7D', \n+%0Aprint(\n vm.g\n@@ -1039,12 +1039,9 @@\n tSlot())\n-));%0A\n+;\n",
+            "lines": "60"
+        },
+        {
+            "label": "2025-11-16_16-19-55",
+            "content": "@@ -164,26 +164,9 @@\n  = %5B\n-Slot()%5D * capacity\n+%5D\n ;%0A  \n@@ -288,328 +288,24 @@\n or%0A%0A\n-  # saldo: 0.00%0A  # 0 %5B   empty : 0 U : 0.00 RS%5D%0A  # 1 %5B   empty : 0 U : 0.00 RS%5D%0A  # 2 %5B   empty : 0 U : 0.00 RS%5D%0A%0A  # M%C3%A9todo str%0A  def __str__(self) -%3E str:%0A    strReturn = f'saldo: %7Bself.getCash()%7D%5Cn';%0A    for slot in self.getSlot():%0A      strReturn += f'%7Bself.getSlot().index(slot)%7D %7Bslot%7D%5Cn';%0A%0A    return strReturn;\n+%0A  # M%C3%A9todo str%0A\n %0A  #\n@@ -701,19 +701,8 @@\n t):%0A\n-    try:%0A  \n     \n@@ -720,18 +720,16 @@\n = Slot(%0A\n-  \n       na\n@@ -745,18 +745,16 @@\n ,%0A      \n-  \n quantity\n@@ -766,18 +766,16 @@\n antity,%0A\n-  \n       pr\n@@ -794,16 +794,12 @@\n     \n-  \n );%0A%0A\n-  \n     \n@@ -816,100 +816,21 @@\n ot()\n-%5Bindex%5D = slot;%0A%0A    except IndexError:%0A      print('fail: indice nao existe');%0A      return\n+.append(slot)\n ;%0A  \n@@ -967,22 +967,8 @@\n );%0A%0A\n-print(vm);%0A%0A# \n prin\n@@ -1020,18 +1020,16 @@\n ())));%0A%0A\n-# \n vm.setSl\n@@ -1054,18 +1054,16 @@\n , 2.5);%0A\n-# \n vm.setSl\n@@ -1090,18 +1090,16 @@\n  5.0);%0A%0A\n-# \n print(li\n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-16_16-29-59",
+            "content": "@@ -504,12 +504,8 @@\n sh()\n-:.2f\n %7D%5Cn'\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-30-54",
+            "content": "@@ -552,148 +552,8 @@\n     \n-if self.getSlot().index(slot) != self.getCapacity() -1:%0A        strReturn += f'%7Bself.getSlot().index(slot)%7D %7Bslot%7D%5Cn';%0A%0A      else:%0A        \n strR\n@@ -598,16 +598,18 @@\n %7D %7Bslot%7D\n+%5Cn\n ';%0A%0A    \n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-32-25",
+            "content": "@@ -530,16 +530,62 @@\n  in \n-range(0,\n+self.getSlot():%0A      if self.getSlot().index(slot) !=\n  sel\n@@ -599,19 +599,23 @@\n pacity()\n-):%0A\n+ -1:%0A  \n       st\n@@ -633,14 +633,117 @@\n f'%7Bs\n+elf.getSlot().index(slot)%7D %7Bslot%7D%5Cn';%0A%0A      else:%0A        strReturn += f'%7Bself.getSlot().index(slot)%7D %7Bs\n lot%7D\n-%5Cn\n ';%0A%0A\n",
+            "lines": "81"
+        },
+        {
+            "label": "2025-11-16_16-36-14",
+            "content": "@@ -301,16 +301,131 @@\n trutor%0A%0A\n+  # saldo: 0.00%0A  # 0 %5B   empty : 0 U : 0.00 RS%5D%0A  # 1 %5B   empty : 0 U : 0.00 RS%5D%0A  # 2 %5B   empty : 0 U : 0.00 RS%5D%0A\n %0A  # M%C3%A9t\n@@ -566,163 +566,31 @@\n     \n-if slot != self.getCapacity() -1:%0A       strReturn += f'%7Bslot%7D %7Bself.getSlot()%5Bslot%5D%7D%5Cn';%0A%0A      else:%0A        strReturn += f'%7Bslot%7D %7Bself.getSlot()%5Bslot%5D%7D\n+strReturn += f'%7Bslot%7D%5Cn\n ';%0A%0A\n@@ -1372,9 +1372,9 @@\n ine(\n-3\n+6\n );%0A%0A\n@@ -1444,16 +1444,18 @@\n ())));%0A%0A\n+# \n vm.setSl\n@@ -1480,16 +1480,18 @@\n , 2.5);%0A\n+# \n vm.setSl\n@@ -1518,27 +1518,16 @@\n  5.0);%0A%0A\n-print(vm);%0A\n # print(\n",
+            "lines": "77"
+        },
+        {
+            "label": "2025-11-16_16-38-50",
+            "content": "@@ -417,16 +417,19 @@\n n range(\n+0, \n self.get\n@@ -482,13 +482,11 @@\n () -\n- \n 1:%0A\n- \n     \n@@ -524,21 +524,23 @@\n getSlot(\n+)%5B\n slot\n-)\n+%5D\n %7D%5Cn';%0A%0A \n@@ -598,13 +598,15 @@\n lot(\n+)%5B\n slot\n-)\n+%5D\n %7D';%0A\n@@ -692,119 +692,48 @@\n self\n-, index: int) -%3E Slot %7C None:%0A    try:%0A      return self.__slots%5Bindex%5D;%0A  %0A    except IndexError:%0A      return\n+) -%3E list%5BSlot%5D:%0A    return self.__slots\n ;%0A%0A \n@@ -1151,23 +1151,25 @@\n    self.\n-__slots\n+getSlot()\n %5Bindex%5D \n@@ -1304,54 +1304,8 @@\n eto%0A\n-  def clear(self, index: int):%0A    try:%0A      \n %0A  #\n@@ -1461,18 +1461,16 @@\n ())));%0A%0A\n-# \n vm.setSl\n@@ -1495,18 +1495,16 @@\n , 2.5);%0A\n-# \n vm.setSl\n@@ -1506,17 +1506,17 @@\n setSlot(\n-1\n+0\n , 'xaver\n@@ -1524,9 +1524,10 @@\n e', \n-4\n+10\n , 5.\n@@ -1527,26 +1527,24 @@\n  10, 5.0);%0A%0A\n-# \n print(vm);%0A#\n",
+            "lines": "78"
+        },
+        {
+            "label": "2025-11-16_16-53-25",
+            "content": "@@ -1414,75 +1414,8 @@\n     \n-self.__slots%5Bindex%5D = Slot();%0A%0A    except IndexError:%0A      return;\n %0A  #\n@@ -1512,16 +1512,77 @@\n t(vm);%0A%0A\n+# print(list(map(lambda slot: f'%7Bslot%7D', vm.getSlot())));%0A%0A# \n vm.setSl\n@@ -1607,16 +1607,18 @@\n , 2.5);%0A\n+# \n vm.setSl\n@@ -1647,76 +1647,76 @@\n 0);%0A\n-vm.setSlot(2, 'tampico', 8, 3.5);%0A%0Aprint(vm);%0A%0Avm.clear(0);%0A%0Aprint(vm\n+%0A# print(vm);%0A# print(list(map(lambda slot: f'%7Bslot%7D', vm.getSlot()))\n );%0A\n",
+            "lines": "84"
+        },
+        {
+            "label": "2025-11-16_16-57-02",
+            "content": "@@ -1322,575 +1322,166 @@\n rn;%0A\n-%0A  def setCash(self, value: float):%0A    if value %3C 0:%0A      return;%0A  %0A    self.__cash = value;%0A  %0A  def setProfit(self, value: float):%0A    if value %3C 0:%0A      return;%0A%0A    self.__profit = value;%0A  # Fim m%C3%A9todo mutante%0A%0A%0A  # M%C3%A9todo do objeto%0A  def clear(self, index: int):%0A    try:%0A      self.__slots%5Bindex%5D = Slot();%0A%0A    except IndexError:%0A      return;%0A%0A  def insertCash(self, value: float):%0A    self.setCash(self.getCash() + value);%0A%0A  def withdrawCash(self) -%3E float:%0A    change: float = self.getCash() - self.getProfit();%0A    self.setCash(0);%0A%0A    return change\n+  # Fim m%C3%A9todo mutante%0A%0A%0A  # M%C3%A9todo do objeto%0A  def clear(self, index: int):%0A    try:%0A      self.__slots%5Bindex%5D = Slot();%0A%0A    except IndexError:%0A      return\n ;%0A  \n",
+            "lines": "89"
+        },
+        {
+            "label": "2025-11-16_17-09-20",
+            "content": "@@ -1891,1015 +1891,8 @@\n ge;%0A\n-%0A%0A  #  comprar(ind: number): Realiza a compra de um produto de um slot na m%C3%A1quina. A compra s%C3%B3 pode ser realizada se existir produto nessa posi%C3%A7%C3%A3o, se o saldo for suficiente e se a quantidade do produto for maior que zero. Caso positivo, quantidade %C3%A9 reduzida em 1 e o valor do produto %C3%A9 decrementado no saldo.%0A%0A  #  erros: fail: indice nao existe, fail: saldo insuficiente, fail: espiral sem produtos.%0A%0A  def buyItem(self, index: int):%0A    try:%0A      chosenItem: Slot %7C None = self.getSlot(index);%0A%0A      if chosenItem is None:%0A        print('fail: espiral sem produtos');%0A        return;%0A  %0A      if self.getCash() %3C chosenItem.getPrice():%0A        print('fail: saldo insuficiente');%0A        return;%0A%0A      payment: float = self.getCash() - chosenItem.getPrice();  %0A      self.setCash(self.getCash() - payment);%0A      self.setProfit(self.getProfit() + payment);%0A    %0A      chosenItem.setQuantity(chosenItem.getQuantity() - 1);%0A%0A    except IndexError:%0A      print('fail: indice nao existe');%0A      return;%0A%0A\n   # \n@@ -2110,20 +2110,14 @@\n %0Avm.\n-insertCash(1\n+clear(\n 0);%0A\n",
+            "lines": "110"
+        },
+        {
+            "label": "2025-11-16_17-22-54",
+            "content": "@@ -1888,16 +1888,419 @@\n hange;%0A%0A\n+%0A  #  comprar(ind: number): Realiza a compra de um produto de um slot na m%C3%A1quina. A compra s%C3%B3 pode ser realizada se existir produto nessa posi%C3%A7%C3%A3o, se o saldo for suficiente e se a quantidade do produto for maior que zero. Caso positivo, quantidade %C3%A9 reduzida em 1 e o valor do produto %C3%A9 decrementado no saldo.%0A%0A  #  erros: fail: indice nao existe, fail: saldo insuficiente, fail: espiral sem produtos.%0A%0A\n   def bu\n@@ -2591,37 +2591,41 @@\n urn;%0A%0A      \n-self.setCash(\n+payment: float = \n self.getCash\n@@ -2646,24 +2646,71 @@\n m.getPrice()\n+;  %0A      self.setCash(self.getCash() - payment\n );%0A      sel\n@@ -2740,37 +2740,23 @@\n fit() + \n-chosenItem.getPrice()\n+payment\n );%0A    %0A\n@@ -2889,24 +2889,25 @@\n     return;%0A\n+%0A\n   # Fim m%C3%A9to\n@@ -2920,16 +2920,16 @@\n objeto%0A%0A\n-\n # Fim cl\n@@ -2928,28 +2928,221 @@\n # Fim classe VendingMachine%0A\n+%0A# testes%0Avm = VendingMachine(3);%0A%0Aprint(vm);%0A%0Avm.setSlot(0, 'todinho', 6, 2.5);%0Avm.setSlot(1, 'xaverde', 4, 5.0);%0Avm.setSlot(2, 'tampico', 8, 3.5);%0A%0Aprint(vm);%0A%0Avm.insertCash(10);%0A%0Aprint(vm);%0A\n",
+            "lines": "138"
+        },
+        {
+            "label": "2025-11-16_17-31-46",
+            "content": "@@ -1872,49 +1872,8 @@\n );%0A%0A\n-    print(f'voce recebeu %7Bchange%7D RS ');%0A\n     \n",
+            "lines": "116"
+        },
+        {
+            "label": "2025-11-16_17-42-16",
+            "content": "@@ -1900,20 +1900,16 @@\n  %7Bchange\n-:.2f\n %7D RS ');\n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-16_17-42-27",
+            "content": "@@ -1908,16 +1908,17 @@\n :.2f%7D RS\n+ \n ');%0A    \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-16_17-42-44",
+            "content": "@@ -2422,64 +2422,8 @@\n  1);\n-%0A      print(f'voce comprou um %7BchosenItem.getName()%7D');\n %0A%0A  \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-16_17-43-38",
+            "content": "@@ -2059,41 +2059,8 @@\n None\n- or chosenItem.getQuantity() == 0\n :%0A  \n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-44-43",
+            "content": "@@ -2037,16 +2037,38 @@\n      if \n+chosenItem is None or \n chosenIt\n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-45-33",
+            "content": "@@ -2041,75 +2041,8 @@\n  if \n-chosenItem is None and index %3E 0 and index %3C self.getCapacity() or \n chos\n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-47-05",
+            "content": "@@ -1997,16 +1997,23 @@\n m: Slot \n+%7C None \n = self.g\n@@ -2037,16 +2037,83 @@\n      if \n+chosenItem is None and index %3E 0 and index %3C self.getCapacity() or \n chosenIt\n@@ -2175,20 +2175,39 @@\n  produto\n+s\n ');%0A\n+        return;%0A  \n %0A      i\n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-48-51",
+            "content": "@@ -2104,32 +2104,16 @@\n oduto');\n-%0A        return;\n %0A%0A      \n",
+            "lines": "117"
+        },
+        {
+            "label": "2025-11-16_17-49-14",
+            "content": "@@ -2101,17 +2101,16 @@\n  produto\n-s\n ');%0A    \n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-49-25",
+            "content": "@@ -2019,17 +2019,16 @@\n (index);\n- \n %0A%0A      \n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-52-41",
+            "content": "@@ -2559,90 +2559,8 @@\n urn;\n-%0A%0A    except AttributeError:%0A      print('fail: indice nao existe');%0A      return;\n %0A  #\n",
+            "lines": "118"
+        },
+        {
+            "label": "2025-11-16_17-53-27",
+            "content": "@@ -1973,42 +1973,11 @@\n     \n-if self.getSlot(index) is not None\n+try\n :%0A  \n@@ -2432,596 +2432,8 @@\n     \n-%0A    else:%0A      print('fail: indice nao existe');%0A      return;%0A%0A%0A    try:%0A      if self.__slots%5Bindex%5D:    %0A        chosenItem: Slot = self.getSlot(index); %0A%0A        if chosenItem.getQuantity() == 0:%0A          print('fail: espiral sem produtos');%0A          return;%0A%0A        if self.getCash() %3C chosenItem.getPrice():%0A          print('fail: saldo insuficiente');%0A          return;%0A%0A        self.setCash(self.getCash() - chosenItem.getPrice());%0A        self.setProfit(self.getProfit() + chosenItem.getPrice());%0A      %0A        chosenItem.setQuantity(chosenItem.getQuantity() - 1);%0A        \n prin\n",
+            "lines": "122"
+        },
+        {
+            "label": "2025-11-16_17-56-32",
+            "content": "@@ -1973,44 +1973,10 @@\n     \n-try:%0A      chosenItem: Slot %7C None =\n+if\n  sel\n@@ -1995,21 +1995,28 @@\n dex)\n-; %0A\n+ is not None:\n %0A      \n-if \n chos\n@@ -2025,75 +2025,38 @@\n Item\n- is None:%0A        print('fail: indice nao existe');%0A        return;\n+: Slot = self.getSlot(index); \n %0A%0A  \n@@ -2455,24 +2455,612 @@\n - 1);%0A      \n+%0A    else:%0A      print('fail: indice nao existe');%0A      return;%0A%0A%0A    try:%0A      if self.__slots%5Bindex%5D:    %0A        chosenItem: Slot = self.getSlot(index); %0A%0A        if chosenItem.getQuantity() == 0:%0A          print('fail: espiral sem produtos');%0A          return;%0A%0A        if self.getCash() %3C chosenItem.getPrice():%0A          print('fail: saldo insuficiente');%0A          return;%0A%0A        self.setCash(self.getCash() - chosenItem.getPrice());%0A        self.setProfit(self.getProfit() + chosenItem.getPrice());%0A      %0A        chosenItem.setQuantity(chosenItem.getQuantity() - 1);%0A        \n print(f'voce\n",
+            "lines": "144"
+        },
+        {
+            "label": "2025-11-16_17-59-40",
+            "content": "@@ -1825,16 +1825,35 @@\n etCash()\n+ - self.getProfit()\n ;%0A    se\n",
+            "lines": "126"
+        },
+        {
+            "label": "2025-11-16_18-01-17",
+            "content": "from Slot import Slot;\n\n# Criando classe VendingMachine\n\nclass VendingMachine:\n  # Construtor\n  def __init__(self, capacity: int = 0):\n    self.__slots: list[Slot] = [Slot()] * capacity;\n    self.__profit: float = 0.00;\n    self.__cash: float = 0.00;\n    self.__capacity: int = capacity;\n  # Fim construtor\n\n\n  # M\u00e9todo str\n  def __str__(self) -> str:\n    strReturn = f'saldo: {self.getCash():.2f}\\n';\n    for slot in range(self.getCapacity()):\n      if slot != self.getCapacity() - 1:\n        strReturn += f'{slot} {self.getSlot(slot)}\\n';\n\n      else:\n        strReturn += f'{slot} {self.getSlot(slot)}';\n\n    return strReturn;\n  # Fim m\u00e9todo str\n\n\n  # M\u00e9todo de acesso\n  def getSlot(self, index: int) -> Slot | None:\n    try:\n      return self.__slots[index];\n  \n    except IndexError:\n      return;\n\n  def getProfit(self) -> float:\n    return self.__profit;\n\n  def getCash(self) -> float:\n    return self.__cash;\n\n  def getCapacity(self) -> int:\n    return self.__capacity;\n  # Fim m\u00e9todo de acesso\n\n\n  # M\u00e9todo mutante\n  def setSlot(self, index: int, name: str, quantity: int, price: float):\n    try:\n      slot: Slot = Slot(\n        name = name,\n        quantity = quantity,\n        price = price\n      );\n\n      self.__slots[index] = slot;\n\n    except IndexError:\n      print('fail: indice nao existe');\n      return;\n\n  def setCash(self, value: float):\n    if value < 0:\n      return;\n  \n    self.__cash = value;\n  \n  def setProfit(self, value: float):\n    if value < 0:\n      return;\n\n    self.__profit = value;\n  # Fim m\u00e9todo mutante\n\n\n  # M\u00e9todo do objeto\n  def clear(self, index: int):\n    try:\n      self.__slots[index] = Slot();\n\n    except IndexError:\n      return;\n\n  def insertCash(self, value: float):\n    self.setCash(self.getCash() + value);\n\n  def withdrawCash(self) -> float:\n    change: float = self.getCash();\n    self.setCash(0);\n\n    print(f'voce recebeu {change:.2f} RS');\n    return change;\n\n  def buyItem(self, index: int):\n    try:\n      chosenItem: Slot | None = self.getSlot(index); \n\n      if chosenItem is None:\n        print('fail: indice nao existe');\n        return;\n\n      if chosenItem.getQuantity() == 0:\n        print('fail: espiral sem produtos');\n        return;\n\n      if self.getCash() < chosenItem.getPrice():\n        print('fail: saldo insuficiente');\n        return;\n\n      self.setCash(self.getCash() - chosenItem.getPrice());\n      self.setProfit(self.getProfit() + chosenItem.getPrice());\n    \n      chosenItem.setQuantity(chosenItem.getQuantity() - 1);\n      print(f'voce comprou um {chosenItem.getName()}');\n\n    except IndexError:\n      print('fail: indice nao existe');\n      return;\n\n    except AttributeError:\n      print('fail: indice nao existe');\n      return;\n  # Fim m\u00e9todo do objeto\n\n# Fim classe VendingMachine\n",
+            "lines": "126"
+        }
+    ]
+}
